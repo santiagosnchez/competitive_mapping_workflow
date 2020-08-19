@@ -1,0 +1,15 @@
+Status	STAR/BAM/9F1_Cni.bam	STAR/BAM/9F2_Cni.bam	STAR/BAM/9F3_Cni.bam	STAR/BAM/9M1_Cni.bam	STAR/BAM/9M2_Cni.bam	STAR/BAM/9M3_Cni.bam
+Assigned	33634911	32561440	33831764	33907940	31033072	33935732
+Unassigned_Unmapped	0	0	0	0	0	0
+Unassigned_Read_Type	0	0	0	0	0	0
+Unassigned_Singleton	0	0	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0	0	0
+Unassigned_Chimera	0	0	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0	0	0
+Unassigned_Duplicate	0	0	0	0	0	0
+Unassigned_MultiMapping	3250945	3694182	3619076	4297232	4294371	6061267
+Unassigned_Secondary	0	0	0	0	0	0
+Unassigned_NonSplit	0	0	0	0	0	0
+Unassigned_NoFeatures	9405279	9091070	9374735	10269805	9908168	10923861
+Unassigned_Overlapping_Length	0	0	0	0	0	0
+Unassigned_Ambiguity	38913	38274	39146	49277	42905	54096

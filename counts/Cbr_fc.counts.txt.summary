@@ -1,0 +1,15 @@
+Status	STAR/BAM/BF1_Cbr.bam	STAR/BAM/BF2_Cbr.bam	STAR/BAM/BF3_Cbr.bam	STAR/BAM/BM1_Cbr.bam	STAR/BAM/BM2_Cbr.bam	STAR/BAM/BM3_Cbr.bam
+Assigned	33042485	30945846	29194989	32836030	24334887	29941325
+Unassigned_Unmapped	0	0	0	0	0	0
+Unassigned_Read_Type	0	0	0	0	0	0
+Unassigned_Singleton	0	0	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0	0	0
+Unassigned_Chimera	0	0	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0	0	0
+Unassigned_Duplicate	0	0	0	0	0	0
+Unassigned_MultiMapping	3079115	2830762	2772117	4728888	4138397	3761858
+Unassigned_Secondary	0	0	0	0	0	0
+Unassigned_NonSplit	0	0	0	0	0	0
+Unassigned_NoFeatures	8966007	8705449	8770080	9393222	8663480	8549024
+Unassigned_Overlapping_Length	0	0	0	0	0	0
+Unassigned_Ambiguity	110894	99561	101932	144011	135245	126122
