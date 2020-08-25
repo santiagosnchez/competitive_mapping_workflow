@@ -1,0 +1,15 @@
+Status	alignments/Cni_1_Cni.sorted.bam	alignments/Cni_2_Cni.sorted.bam	alignments/Cni_3_Cni.sorted.bam	alignments/hf1_split/HF1_1_Cni.sorted.bam	alignments/hf1_split/HF1_2_Cni.sorted.bam	alignments/hf1_split/HF1_3_Cni.sorted.bam
+Assigned	0	0	0	0	0	0
+Unassigned_Unmapped	0	0	0	0	0	0
+Unassigned_Read_Type	0	0	0	0	0	0
+Unassigned_Singleton	0	0	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0	0	0
+Unassigned_Chimera	0	0	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0	0	0
+Unassigned_Duplicate	0	0	0	0	0	0
+Unassigned_MultiMapping	0	0	0	0	0	0
+Unassigned_Secondary	0	0	0	0	0	0
+Unassigned_NonSplit	0	0	0	0	0	0
+Unassigned_NoFeatures	979276	977483	978002	426837	424950	427905
+Unassigned_Overlapping_Length	0	0	0	0	0	0
+Unassigned_Ambiguity	0	0	0	0	0	0

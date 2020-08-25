@@ -1,0 +1,15 @@
+Status	alignments/Cbr_1_Cbr.sorted.bam	alignments/Cbr_2_Cbr.sorted.bam	alignments/Cbr_3_Cbr.sorted.bam	alignments/hf1_split/HF1_1_Cbr.sorted.bam	alignments/hf1_split/HF1_2_Cbr.sorted.bam	alignments/hf1_split/HF1_3_Cbr.sorted.bam
+Assigned	1016617	1016238	1020560	423130	422795	420535
+Unassigned_Unmapped	0	0	0	0	0	0
+Unassigned_Read_Type	0	0	0	0	0	0
+Unassigned_Singleton	0	0	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0	0	0
+Unassigned_Chimera	0	0	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0	0	0
+Unassigned_Duplicate	0	0	0	0	0	0
+Unassigned_MultiMapping	0	0	0	0	0	0
+Unassigned_Secondary	0	0	0	0	0	0
+Unassigned_NonSplit	0	0	0	0	0	0
+Unassigned_NoFeatures	0	0	0	0	0	0
+Unassigned_Overlapping_Length	0	0	0	0	0	0
+Unassigned_Ambiguity	0	0	0	0	0	0
