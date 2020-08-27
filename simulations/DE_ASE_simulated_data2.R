@@ -154,30 +154,46 @@ combined_DE_dds = data.frame(species.logFC=dds.SP.res$log2FoldChange, species.pv
     alleles.logFC.compmap=dds.AS.compmap.res$log2FoldChange, alleles.pvalue.compmap=dds.AS.compmap.res$padj, trans_effects.pvalue.compmap=trans_effects.compmap,
     gene=rownames(dds.AS.real.res))
 
-logFC_real_comp = ggplot(combined_DE_dds, aes(x=alleles.logFC.real, y=alleles.logFC.compmap)) +
+cislogFC_real_comp = ggplot(combined_DE_dds, aes(x=alleles.logFC.real, y=alleles.logFC.compmap)) +
     geom_point(alpha=0.2) +
     geom_smooth(method="lm", se=TRUE, color="grey") +
+    labs(x="cis logFC (real)", y="cis logFC (CompMap)") +
+    facet_wrap(~"cis logFC divergence") +
+    background_grid()
+translogFC_real_comp = ggplot(combined_DE_dds, aes(x=species.logFC-alleles.logFC.real, y=species.logFC-alleles.logFC.compmap)) +
+    geom_point(alpha=0.2) +
+    geom_smooth(method="lm", se=TRUE, color="grey") +
+    labs(x="trans logFC (real)", y="trans logFC (CompMap)") +
+    facet_wrap(~"trans logFC divergence") +
     background_grid()
 
 cis_pval = ggplot(combined_DE_dds, aes(x=-log10(alleles.pvalue.real), y=-log10(alleles.pvalue.compmap))) +
     geom_point(alpha=0.2) +
     geom_smooth(method="lm", se=TRUE, color="grey") +
+    labs(x="-log10 p-value (real)", y="-log10 p-value (CompMap)") +
+    facet_wrap(~"cis divergence p-values") +
     background_grid()
 trans_pval = ggplot(combined_DE_dds, aes(x=-log10(trans_effects.pvalue.real), y=-log10(trans_effects.pvalue.compmap))) +
     geom_point(alpha=0.2) +
     geom_smooth(method="lm", se=TRUE, color="grey") +
+    labs(x="-log10 p-value (real)", y="-log10 p-value (CompMap)") +
+    facet_wrap(~"trans divergence p-values") +
     background_grid()
 
 volcano_real = ggplot(combined_DE_dds, aes(x=alleles.logFC.real, y=-log10(alleles.pvalue.real))) +
     geom_point(alpha=0.2) +
     geom_hline(yintercept=-log10(0.05), linetype=2) +
+    labs(x="cis logFC (real)", y="-log10 p-value (real)") +
+    facet_wrap(~"volcano plot (real)") +
     background_grid()
 volcano_comp = ggplot(combined_DE_dds, aes(x=alleles.logFC.compmap, y=-log10(alleles.pvalue.compmap))) +
     geom_point(alpha=0.2) +
     geom_hline(yintercept=-log10(0.05), linetype=2) +
+    labs(x="cis logFC (CompMap)", y="-log10 p-value (CompMap)") +
+    facet_wrap(~"volcano plot (CompMap)") +
     background_grid()
 
-plot_grid(logFC_real_comp, cis_pval, trans_pval, volcano_real, volcano_comp, ncol=3)
+plot_grid(cislogFC_real_comp, translogFC_real_comp, cis_pval, trans_pval, volcano_real, volcano_comp, ncol=2)
 ggsave("cis_and_trans_logFC_and_pvalues.png")
 ggsave("cis_and_trans_logFC_and_pvalues.pdf", device="pdf", useDingbats=F)
 
@@ -223,6 +239,43 @@ combined_DE_dds %>%
     add_column(tmp) %>%
     select(-class.real, -class.compmap) %>%
     select(species.logFC, alleles.logFC, class, method) -> combined_DE_logFC
+
+tmp = combined_DE_dds %>%
+    select(class.real) %>%
+    summarize(match=sum(class.compmap == class.real), total=n()) %>%
+    mutate(error.match=abs(match-total)/total)
+
+combined_DE_dds %>%
+    select(class.real, class.compmap) %>%
+    group_by(class.real) %>%
+    summarize(match=sum(class.compmap == class.real), total=n()) %>%
+    mutate(error.match=abs(match-total)/total) %>%
+    mutate(error.type="type 1") %>%
+    rename(class.real = "class") %>%
+    mutate_if(is.factor, as.character) -> combined_DE_class_error_type1
+
+combined_DE_dds %>%
+    select(class.real, class.compmap) %>%
+    group_by(class.compmap) %>%
+    summarize(match=sum(class.compmap == class.real), total=n()) %>%
+    mutate(error.match=abs(match-total)/total) %>%
+    mutate(error.type="type 2") %>%
+    rename(class.compmap = "class") %>%
+    mutate_if(is.factor, as.character) -> combined_DE_class_error_type2
+
+combined_DE_class_error = rbind(combined_DE_class_error_type1, combined_DE_class_error_type2)
+
+ggplot(combined_DE_class_error, aes(x=class, y=error.match, color=error.type)) +
+    geom_point(position=position_dodge(0.5), size=4) +
+    geom_linerange(aes(ymax=error.match, ymin=0), position=position_dodge(0.5), size=2) +
+    scale_y_continuous(labels = scales::percent, limits=c(0,0.1), expand=c(0,0)) +
+    scale_color_manual(values=c("darkblue","darkgreen"), name="error type") +
+    labs(x="", y="error rate") +
+    background_grid(major="y") +
+    theme(axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))
+
+ggsave("cis_and_trans_error_rate.png")
+ggsave("cis_and_trans_error_rate.pdf", device="pdf", useDingbats=F)
 
 # combined_DE %>%
 #     pivot_longer(cols=c(-species.logFC, -species.pvalue, -gene, -class.real, -class.compmap, -trans_effects.pvalue.compmap, -trans_effects.pvalue.real), names_to="key", values_to="value") %>%
