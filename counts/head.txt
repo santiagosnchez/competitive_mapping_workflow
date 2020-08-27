@@ -1,0 +1,1 @@
+Geneid	BF1_Cbr	BF2_Cbr	BF3_Cbr	BM1_Cbr	BM2_Cbr	BM3_Cbr	9F1_Cni	9F2_Cni	9F3_Cni	9M1_Cni	9M2_Cni	9M3_Cni
