@@ -1,7 +1,7 @@
 #!/usr/local/bin/Rscript
 
 library(polyester)
-library(biostrings)
+library(Biostrings)
 library(ggplot)
 library(tidyr)
 
