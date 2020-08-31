@@ -1,0 +1,15 @@
+Status	BAM/SRR580389.bam	BAM/SRR580390.bam	BAM/SRR580391.bam	BAM/SRR580392.bam	BAM/SRR580393.bam	BAM/SRR580394.bam
+Assigned	29231094	31364706	27782462	26601799	21676180	26369114
+Unassigned_Unmapped	0	0	0	0	0	0
+Unassigned_Read_Type	0	0	0	0	0	0
+Unassigned_Singleton	0	0	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0	0	0
+Unassigned_Chimera	0	0	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0	0	0
+Unassigned_Duplicate	0	0	0	0	0	0
+Unassigned_MultiMapping	3548145	4102889	3574823	6466581	3929311	5703640
+Unassigned_Secondary	0	0	0	0	0	0
+Unassigned_NonSplit	0	0	0	0	0	0
+Unassigned_NoFeatures	7018825	7442960	6875145	6997100	6358014	7221551
+Unassigned_Overlapping_Length	0	0	0	0	0	0
+Unassigned_Ambiguity	44641	47459	43586	97734	83175	95689
