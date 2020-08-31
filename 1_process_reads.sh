@@ -1,14 +1,18 @@
 #!/bin/bash
 
+# download data from SRA
+cat metadata-7938743-processed-ok.tsv | cut -f1,6 | tail -n +2 | parallel -j4 colsep="\t" fasterq-dump -o {2}.fastq {1}
+ls *.fastq | parallel gzip {}
+ls *.fastq.gz | sed 's/\..*//' > samples.txt
+
 # ONLY internal
 # merge and rename fastq files
 # ls --color=auto | cut -d'.' -f5 | sed 's/_R1//' | sort -u > samples.txt
 # cat samples.txt | parallel -j3 'cat *{}* > {}.fastq.gz' &
 # rm HI.1217*
 if [ -f samples.txt ]; then
-
     # trim reads
-    cat samples.txt | parallel --plus -j3 trimmomatic SE -threads 3 {}.fastq.gz {}.trimmed.fastq.gz ILLUMINACLIP:TruSeq3-SE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36 & 
+    cat samples.txt | parallel --plus -j3 trimmomatic SE -threads 3 {}.fastq.gz {}.trimmed.fastq.gz ILLUMINACLIP:TruSeq3-SE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36 &
     cat samples.txt | parallel --plus mv {}.fastq.gz {}.raw.fastq.gz
     mkdir raw trimmed
     mv *trimmed.fastq.gz trimmed
@@ -26,4 +30,3 @@ else
     echo "females: F"
     echo "replicate: [1-3]"
 fi
-
