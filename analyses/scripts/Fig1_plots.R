@@ -27,7 +27,7 @@ cols.sex2 = colorRampPalette(cols.sex)(6)
 # read data
 df.mds = read.csv("tables/expression_dist.mds_coords.csv", row.names=1) # MDS distances
 expr.div = read.csv("tables/df.expr_div.per_sex.csv") # expression divergence (logFC)
-ase.div = read.csv("tables/df.ase.per_sex.csv") # expression divergence (logFC)
+ase.div = read.csv("tables/df.ase.per_sex.csv") # allele-specific expression (logFC)
 df.expr_div.chr.enrich = read.csv("tables/df.enrichment.exprdiv.DE.sex.csv")
 df.ase.chr.enrich = read.csv("tables/df.enrichment.ase.DE.sex.csv")
 df.DE.sex.enrich = read.csv("tables/DE_per_sex_chr_enrichment.csv")

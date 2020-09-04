@@ -234,19 +234,58 @@ dds.ase.sum.M = as.data.frame(dds.ase.res.M) %>% mutate(CniM = ifelse(padj > 0.0
 dds.ase.res.M = cbind(as.data.frame(dds.ase.res.M),dds.ase.sum.M)
 write.csv(dds.ase.res.M, file="tables/deseq_res.ase.males.csv", quote=F)
 
+# get trans effects
+
+getTransEffects = function(x){
+	x = as.data.frame(x)
+	x$T = rep(c("P","H"), each=6)
+	x$S = rep(rep(c("br","ni"), each=3), 2)
+	fit = lm(x ~ T/S, data=x)
+	fit2 = car::linearHypothesis(fit, c("TH:Sni = TP:Sni"))
+	p.value = fit2$`Pr(>F)`[2]
+	list(x, fit, fit2, p.value)
+}
+
+# data set
+keep = coldata.ase$sex == "F"
+df.trans.female = cbind(cpm(counts(dds.briggsae.vs.nigoni.F), log=T), cpm(counts.ase.filter[,keep], log=T))
+keep = coldata.ase$sex == "M"
+df.trans.male = cbind(cpm(counts(dds.briggsae.vs.nigoni.M)[auto,], log=T), cpm(counts.ase.filter[auto,keep], log=T))
+# tests Wald
+excl = c(12365, 13145, 13146, 13246)
+df.trans.female2 = df.trans.female[-excl,]
+trans_effects.female = mclapply(split(df.trans.female2, 1:dim(df.trans.female2)[1]), getTransEffects, mc.cores=4)
+trans_effects.male = mclapply(split(df.trans.male, 1:dim(df.trans.male)[1]), getTransEffects, mc.cores = 4)
+# extract pvalues and FDR analysis
+trans_p.values.fdr.female = p.adjust(sapply(trans_effects.female, function(x) x[[4]] ), method="BH")
+trans_p.values.fdr.male = p.adjust(sapply(trans_effects.male, function(x) x[[4]] ), method="BH")
+tmp = rep(NA, dim(df.trans.female)[1])
+names(tmp) = rownames(df.trans.female)
+names(trans_p.values.fdr.female) = rownames(df.trans.female2)
+tmp[ names(trans_p.values.fdr.female) ] = trans_p.values.fdr.female
+trans_p.values.fdr.female = tmp
+
+
 # consolidate ASE
-df.ase = rbind(data.frame(logFC=dds.ase.res.M$log2FoldChange,
-                              DE=c("sig","no sig","sig")[ factor(dds.ase.sum.M[,1]) ],
-                              species=c("briggsae","nigoni")[ factor(dds.ase.res.M$log2FoldChange > 0) ],
-                              sex="male",
-                              p.value=dds.ase.res.M$padj,
-                              genes=rownames(dds.ase.res.M), stringsAsFactors=F),
-                  data.frame(logFC=dds.ase.res.F$log2FoldChange,
-                              DE=c("sig","no sig","sig")[ factor(dds.ase.sum.F[,1]) ],
-                              species=c("briggsae","nigoni")[ factor(dds.ase.res.F$log2FoldChange > 0) ],
-                              sex="female",
-                              p.value=dds.ase.res.F$padj,
-                              genes=rownames(dds.ase.res.F), stringsAsFactors=F))
+nas = rep(NA, dim(dds.ase.res.F)[1]-dim(dds.ase.res.M)[1])
+df.ase = rbind(data.frame(logFC.sp=dds.briggsae.vs.nigoni.res.M$log2FoldChange,
+                          logFC.ase=c(dds.ase.res.M$log2FoldChange,nas),
+                          DE=c(c("sig","no sig","sig")[ factor(dds.ase.sum.M[,1]) ],nas),
+                          species=c(c("briggsae","nigoni")[ factor(dds.ase.res.M$log2FoldChange > 0) ],nas),
+                          sex="male",
+                          p.value.sp=dds.briggsae.vs.nigoni.res.M$padj,
+                          p.value.ase=c(dds.ase.res.M$padj,nas),
+                          genes=rownames(dds.ase.res.F),
+                          trans_effect=c(trans_p.values.fdr.male,nas), stringsAsFactors=F),
+               data.frame(logFC.sp=dds.briggsae.vs.nigoni.res.F$log2FoldChange,
+                          logFC.ase=dds.ase.res.F$log2FoldChange,
+                          DE=c("sig","no sig","sig")[ factor(dds.ase.sum.F[,1]) ],
+                          species=c("briggsae","nigoni")[ factor(dds.ase.res.F$log2FoldChange > 0) ],
+                          sex="female",
+                          p.value.sp=dds.briggsae.vs.nigoni.res.F$padj,
+                          p.value.ase=dds.ase.res.F$padj,
+                          genes=rownames(dds.ase.res.F),
+                          trans_effect=trans_p.values.fdr.female, stringsAsFactors=F))
 df.ase$chromosome = sub("\\..*","",df.ase$genes)
 df.ase = na.omit(df.ase)
 df.ase$species_DE = paste(df.ase$species, df.ase$DE)
@@ -267,3 +306,70 @@ df.DE.ase.enrich$p.value[19:33] = as.vector(enrichment(x))
 df.DE.ase.enrich$enrichment[19:33] = as.vector(enrichment(x, odds.ratio=T))
 df.DE.ase.enrich$chr.pseudo = (1:6)[ factor(df.DE.ase.enrich$chromosome) ]
 write.csv(df.DE.ase.enrich, file="tables/df.enrichment.ase.DE.sex.csv", row.names=F)
+
+# sex by species interactions
+keep = species == "Cbr" | species == "Cni"
+dds.briggsae.vs.nigoni.sex = DESeqDataSetFromMatrix(countData = counts(dds)[,keep], colData = coldata[keep,], design = ~ species * sex)
+dds.briggsae.vs.nigoni.sex = DESeq(dds.briggsae.vs.nigoni.sex)
+condition_names = resultsNames(dds.briggsae.vs.nigoni.sex)[2:4]
+dds.briggsae.vs.nigoni.sex.res.species = results(dds.briggsae.vs.nigoni.sex, name=condition_names[1])
+dds.briggsae.vs.nigoni.sex.res.sex = results(dds.briggsae.vs.nigoni.sex, name=condition_names[2])
+dds.briggsae.vs.nigoni.sex.res.interaction = results(dds.briggsae.vs.nigoni.sex, name=condition_names[3])
+df.species_sex = data.frame(logFC_species=dds.briggsae.vs.nigoni.sex.res.species$log2FoldChange, pvalue_species=dds.briggsae.vs.nigoni.sex.res.species$padj,
+                            logFC_sex=dds.briggsae.vs.nigoni.sex.res.sex$log2FoldChange, pvalue_sex=dds.briggsae.vs.nigoni.sex.res.sex$padj,
+                            logFC_interaction=dds.briggsae.vs.nigoni.sex.res.interaction$log2FoldChange, pvalue_interaction=dds.briggsae.vs.nigoni.sex.res.interaction$padj)
+df.species_sex.sum = df.species_sex %>%
+    mutate(species = ifelse(pvalue_species > 0.05, 0, ifelse(logFC_species > 0, 1, -1)),
+           sex = ifelse(pvalue_sex > 0.05, 0, ifelse(logFC_sex > 0, 1, -1)),
+           interaction = ifelse(pvalue_interaction > 0.05, 0, ifelse(logFC_interaction > 0, 1, -1))) %>%
+           select(species, sex, interaction)
+    select(CniM)
+
+# paste together
+
+models.species_sex = paste(df.species_sex.sum[,2], df.species_sex.sum[,3], df.species_sex.sum[,4])
+
+# classify genes based on F1 expression relative to parent species
+# first column:
+# 0 = no DE
+# -1 = C. briggsae
+# 1 = C. nigoni
+# second column:
+# 0 = no DE
+# 1 = males
+# -1 = females
+# third column:
+# no interaction = 0
+# interaction = 1 = -1
+get_species_sex_class = function(x){
+	class_species_sex = vector("character", length=length(x))
+	class_species_sex[ x == "0 0 0" ] = "conserved sex-neutral no_interaction"
+	class_species_sex[ x == "0 1 0" ] = "conserved male-biased no_interaction"
+	class_species_sex[ x == "0 -1 0" ] = "conserved female-biased no_interaction"
+	class_species_sex[ x == "1 0 0" ] = "nigoni sex-neutral no_interaction"
+	class_species_sex[ x == "-1 0 0" ] = "briggsae sex-neutral no_interaction"
+	class_species_sex[ x == "1 1 0" ] = "nigoni male-biased no_interaction"
+	class_species_sex[ x == "-1 1 0" ] = "briggsae male-biased no_interaction"
+	class_species_sex[ x == "1 -1 0" ] = "nigoni female-biased no_interaction"
+	class_species_sex[ x == "-1 -1 0" ] = "briggsae female-biased no_interaction"
+	class_species_sex[ x == "0 0 -1" | x == "0 0 1" ] = "conserved sex-neutral interaction"
+	class_species_sex[ x == "-1 -1 -1" | x == "-1 -1 1" ] = "briggsae female-biased interaction"
+	class_species_sex[ x == "-1 1 -1" | x == "-1 1 1" ] = "briggsae male-biased interaction"
+	class_species_sex[ x == "1 -1 -1" | x == "1 -1 1" ] = "nigoni female-biased interaction"
+	class_species_sex[ x == "1 1 -1" | x == "1 1 1" ] = "nigoni male-biased interaction"
+	class_species_sex[ class_species_sex == "" ] = "ambiguous"
+	return(class_species_sex)
+}
+
+species_sex_class = get_species_sex_class(models.species_sex)
+species_sex_class[ species_sex_class == "conserved sex-neutral interaction" ] = "ambiguous"
+
+models.levels = sort(unique(species_sex_class))[-1][c(8,5,13,7,4,12,3,11,6,2,10,1,9)]
+
+df.species_sex_class = as.data.frame(t(as.data.frame(strsplit(species_sex_class, " "))), stringsAsFactor=F)
+colnames(df.species_sex_class) = c("species","sex","interaction")
+rownames(df.species_sex_class) = rownames(dds.briggsae.vs.nigoni.sex.res.interaction)
+
+df.species_sex = cbind(df.species_sex, models=species_sex_class, df.species_sex_class)
+df.species_sex = df.species_sex[ df.species_sex[,"models"] != "ambiguous", ]
+df.species_sex$models = factor(df.species_sex$models, models.levels)
