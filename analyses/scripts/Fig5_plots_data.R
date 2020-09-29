@@ -1,46 +1,38 @@
-library(limma)
-library(Glimma)
-library(edgeR)
-library(MASS)
-library(car)
+# libraries
 library(ggplot2)
 library(cowplot)
 library(lemon)
 library(ggridges)
 library(ggstance)
 library(ggsci)
-library(ggplotify)
-library(gtable)
-library(grid)
-library(ggplotify)
 library(tidyr)
 library(dplyr)
-library(stringr)
+library(gtable)
+library(ggplotify)
+library(ggpointdensity)
+library(grid)
 library(gridExtra)
 library(RColorBrewer)
-library(parallel)
-library(WGCNA)
-library(raster) # distance between points
-library(eulerr) # for venn diagrams
+library(viridis)
 theme_set(theme_cowplot())
 source("enrichment_fun.R")
 
 
-cis_trans.data = read.csv("df.cis_trans.regulation_type.csv")
-molevol = read.csv("dnds_propcons_position_domain.csv", row.names=1)
-cis_trans.molevol.data = cbind(cis_trans.data[,-ncol(cis_trans.data)], molevol[as.character(cis_trans.data$genes), ])
+cis_trans.molevol.data = read.csv("tables/df.cis_divergence.molevol.csv")
 cis_trans.molevol.data$domain2 = as.character(cis_trans.molevol.data$domain)
-cis_trans.molevol.data$domain2[ grepl("arm|tip",cis_trans.molevol.data$domain2) ] = "arms"
-type.levels = c("conserved","ambiguous","trans only","cis only","cis-trans (enhancing)","cis-trans (compensatory)")
+cis_trans.molevol.data$domain2[ grepl("arm",cis_trans.molevol.data$domain2) ] = "arms"
+cis_trans.molevol.data$domain2[ grepl("tip",cis_trans.molevol.data$domain2) ] = "tips"
+type.levels = c("conserved","ambiguous","trans-only","cis-only","cis + trans (enhancing)","cis x trans (compensatory)","cis-trans (compensatory)")
 
-arms_centers.counts.male = as.data.frame(cis_trans.molevol.data %>% filter(sex == "male") %>% group_by(type,domain2) %>% count() )
-arms_centers.counts.female = as.data.frame(cis_trans.molevol.data %>% filter(sex == "female") %>% group_by(type,domain2) %>% count() )
-arms_centers.type.enrich = data.frame(sex=rep(c("female","male"), each=6),
+arms_centers.counts.male = as.data.frame(cis_trans.molevol.data %>% filter(sex == "male" & domain2 != "tips") %>% group_by(domain2, type) %>% count() )
+arms_centers.counts.female = as.data.frame(cis_trans.molevol.data %>% filter(sex == "female" & domain2 != "tips") %>% group_by(domain2, type) %>% count() )
+arms_centers.type.enrich = data.frame(sex=rep(c("female","male"), each=14),
                                       type=rep(levels(arms_centers.counts.male$type),2),
-                                      enrichment=c(enrichment(matrix(arms_centers.counts.female$n, nrow=2, ncol=6), odds.ratio=T)[1,],
-                                                  enrichment(matrix(arms_centers.counts.male$n, nrow=2, ncol=6), odds.ratio=T)[1,]),
-                                      p.value=c(enrichment(matrix(arms_centers.counts.female$n, nrow=2, ncol=6), odds.ratio=F)[1,],
-                                                  enrichment(matrix(arms_centers.counts.male$n, nrow=2, ncol=6), odds.ratio=F)[1,]))
+                                      domain=rep(levels(arms_centers.counts.male$domain2),2),
+                                      enrichment=c(enrichment(matrix(arms_centers.counts.female$n, nrow=2, ncol=7), odds.ratio=T)[1,],
+                                                  enrichment(matrix(arms_centers.counts.male$n, nrow=2, ncol=7), odds.ratio=T)[1,]),
+                                      p.value=c(enrichment(matrix(arms_centers.counts.female$n, nrow=2, ncol=7), odds.ratio=F)[1,],
+                                                  enrichment(matrix(arms_centers.counts.male$n, nrow=2, ncol=7), odds.ratio=F)[1,]))
 arms_centers.type.enrich$type = factor(arms_centers.type.enrich$type, type.levels)
 
 arms_centers.type.enrich$sig = ""
@@ -89,7 +81,7 @@ cols.arms_centers = cols[c(4,8)]
 
 # exclude genes that do not have significant ASE difference
 
-pA = ggplot(filter(cis_trans.molevol.data, sex == "female"),
+pA = ggplot(filter(cis_trans.molevol.data %>% filter(domain2 != "tips"), sex == "female"),
       aes(x=position/1e6, y=dn)) +
   geom_point(aes(color=domain2), alpha=0.2, show.legend=F) +
   geom_smooth(show.legend=F, color="black") +
@@ -104,7 +96,7 @@ pA = ggplot(filter(cis_trans.molevol.data, sex == "female"),
   background_grid(major="y", size.major = 0.2, colour.major = "grey75") +
   ylim(0,0.2)
 
-pA2 = ggplot(filter(cis_trans.molevol.data, sex == "female"),
+pA2 = ggplot(filter(cis_trans.molevol.data %>% filter(domain2 != "tips"), sex == "female"),
       aes(x=position/1e6, y=ds_ENCc)) +
   geom_point(aes(color=domain2), alpha=0.2, show.legend=F) +
   geom_smooth(show.legend=F, color="black") +
@@ -119,7 +111,7 @@ pA2 = ggplot(filter(cis_trans.molevol.data, sex == "female"),
   background_grid(major="y", size.major = 0.2, colour.major = "grey75") +
   ylim(0,0.75)
 
-pB = ggplot(filter(cis_trans.molevol.data, sex == "female"),
+pB = ggplot(filter(cis_trans.molevol.data %>% filter(domain2 != "tips"), sex == "female"),
       aes(x=position/1e6, y=1-prop_cons_500bp_upstream_5bp_win)) +
   geom_point(aes(color=domain2), alpha=0.2, show.legend=F) +
   geom_smooth(show.legend=F, color="black") +
@@ -134,8 +126,10 @@ pB = ggplot(filter(cis_trans.molevol.data, sex == "female"),
   background_grid(major="y", size.major = 0.2, colour.major = "grey75") +
   ylim(0,1)
 
-pC = ggplot(filter(cis_trans.molevol.data, type != "ambiguous" & type != "conserved" & type != "trans only"),
-      aes(x=position/1e6, y=abs(logFC_F1_cis))) +
+pC = ggplot(cis_trans.molevol.data %>% filter(!grepl("hermaphrodite", sex)) %>%
+                    filter(domain2 != "tips") %>%
+                    filter(type != "ambiguous" & type != "conserved" & type != "trans only" ),
+      aes(x=position/1e6, y=abs(logFC.ase))) +
   geom_point(aes(color=domain2), alpha=0.2, show.legend=F) +
   geom_smooth(show.legend=F, color="black") +
   facet_rep_grid(sex~chromosome, drop=TRUE, scales="free_x") +
@@ -151,38 +145,38 @@ pC = ggplot(filter(cis_trans.molevol.data, type != "ambiguous" & type != "conser
 
 # remove the empty X-chr facet for males
 grob = as_grob(pC)
-grob$grobs[[ which(grob$layout$name %in% "panel-6-2") ]] = nullGrob()
+grob$grobs[[ which(grob$layout$name %in% "panel-2-6") ]] = nullGrob()
 grob$grobs[[ which(grob$layout$name %in% "axis-l-2-6") ]] = nullGrob()
 grob$grobs[[ which(grob$layout$name %in% "axis-b-6-1") ]] = nullGrob()
 grob$layout[ which(grob$layout$name %in% "axis-b-6"), c("t","b")] = grob$layout[ which(grob$layout$name %in% "axis-b-6"), c("t","b")] - 3
 pC = as.ggplot(grob)
 
-pD1 = ggplot(cis_trans.molevol.data,
-      aes(y=domain2, x=abs(logFC_F1_cis), fill=domain2)) +
+pD1 = ggplot(cis_trans.molevol.data %>% filter(domain2 != "tips") %>% filter(!grepl("hermaphrodite", sex)),
+      aes(y=domain2, x=sqrt(abs(logFC.ase)), fill=domain2)) +
   geom_density_ridges(color=NA, alpha=0.7, show.legend=F) +
   geom_boxploth(show.legend=F, outlier.shape=NA, width=0.5, alpha=0.7) +
   facet_rep_wrap(~sex) +
   scale_fill_manual(values=cols.arms_centers) +
   #scale_y_discrete(limits=c("center","arms")) +
-  xlab(expression(paste("log"[2], " ASE (",italic("cis"),")"))) +
+  xlab(expression(paste("log"[2], " ", italic("cis")," [sqrt norm]"))) +
   ylab("") +
   theme(strip.background = element_rect(fill="grey90", color=NA)) +
   background_grid(major="x", size.major = 0.2, colour.major = "grey75") +
   xlim(0,4)
 
-pD2 = ggplot(cis_trans.molevol.data,
-      aes(y=domain2, x=abs(logFC_parents-logFC_F1_cis), fill=domain2)) +
+pD2 = ggplot(cis_trans.molevol.data %>% filter(domain2 != "tips") %>% filter(!grepl("hermaphrodite", sex)),
+      aes(y=domain2, x=sqrt(abs(logFC.sp)-abs(logFC.ase)), fill=domain2)) +
   geom_density_ridges(color=NA, alpha=0.7, show.legend=F) +
   geom_boxploth(show.legend=F, outlier.shape=NA, width=0.5, alpha=0.7) +
   facet_rep_wrap(~sex) +
   scale_fill_manual(values=cols.arms_centers) +
   #scale_y_discrete(limits=c("center","arms")) +
-  xlab(expression(paste("log"[2], " ", italic("trans")))) +
+  xlab(expression(paste("log"[2], " ", italic("trans"), " [sqrt norm]"))) +
   ylab("") +
   theme(strip.background = element_rect(fill="grey90", color=NA)) +
   theme(axis.text.y=element_blank()) +
   background_grid(major="x", size.major = 0.2, colour.major = "grey75") +
-  xlim(0,7)
+  xlim(0,4)
 
 part1 = plot_grid(
           pB + theme(plot.margin = unit(c(t=0.2, r=0.64, b=0, l=0), "cm")),
@@ -192,35 +186,41 @@ part1 = plot_grid(
           rel_heights = c(0.3,0.6,0.4), ncol=1, labels=c("A","B","C"))
 
 # correlation
-p1 = ggplot(filter(cis_trans.molevol.data, sex == "female"), aes(y=dn/ds_ENCc, x=abs(logFC_F1_cis))) +
+p1 = ggplot(filter(cis_trans.molevol.data, sex == "female" | sex == "male"), aes(y=dn/ds_ENCc, x=abs(logFC.ase))) +
     geom_pointdensity(show.legend=F) +
     geom_smooth(method="lm", color="black") +
     ylab(expression(paste(italic("K")[a],"/",italic("K")[s],"\'",sep=""))) +
     xlab("") +
     background_grid(major="xy", size.major = 0.2, colour.major = "grey75") +
+    facet_rep_wrap(~sex, ncol=1, strip.position="right") +
     scale_color_viridis(option="viridis") +
+    theme(strip.background = element_blank(), strip.text = element_blank()) +
     ylim(0,1)
-p2 = ggplot(filter(cis_trans.molevol.data, sex == "female"), aes(y=dn, x=abs(logFC_F1_cis))) +
+p2 = ggplot(filter(cis_trans.molevol.data, sex == "female" | sex == "male"), aes(y=dn, x=abs(logFC.ase))) +
     geom_pointdensity(show.legend=F) +
     geom_smooth(method="lm", color="black") +
     ylab(expression(paste(italic("K")[a]))) +
-    xlab(expression(paste("log"[2], " ASE (",italic("cis"),")"))) +
+    xlab(expression(paste("log"[2], " ",italic("cis")))) +
     background_grid(major="xy", size.major = 0.2, colour.major = "grey75") +
     scale_color_viridis(option="viridis") +
+    facet_rep_wrap(~sex, ncol=1, strip.position="right") +
+    theme(strip.background = element_blank(), strip.text = element_blank()) +
     ylim(0,0.4)
-p3 = ggplot(filter(cis_trans.molevol.data, sex == "female"), aes(y=1-prop_cons_500bp_upstream_5bp_win, x=abs(logFC_F1_cis))) +
+p3 = ggplot(filter(cis_trans.molevol.data, sex == "female" | sex == "male"), aes(y=1-prop_cons_500bp_upstream_5bp_win, x=abs(logFC.ase))) +
     geom_pointdensity(show.legend=F) +
     geom_smooth(method="lm", color="black") +
     ylab(expression(paste("1-",italic("p")[cons]))) +
     xlab("") +
     background_grid(major="xy", size.major = 0.2, colour.major = "grey75") +
+    facet_rep_wrap(~sex, ncol=1, strip.position="right") +
+    theme(strip.background = element_rect(fill="grey90", color=NA)) +
     scale_color_viridis(option="viridis")
-part2 = plot_grid(p1, p2, p3, nrow=1, labels = c("D","E","F"))
+part2 = plot_grid(p1, p2, p3, nrow=1, labels = c("D","E","F"), rel_widths=c(0.45,0.45,0.5))
 
-plot_grid(part1, part2, rel_heights=c(c(0.75, 0.25)), ncol=1)
+plot_grid(part1, part2, rel_heights=c(c(0.65, 0.35)), ncol=1)
 
-ggsave("Fig6_cis_trans_exprdiv_along_chromosomes_last.png")
-ggsave("Fig6_cis_trans_exprdiv_along_chromosomes_last.pdf", device="pdf")
+ggsave("figures/Fig6_cis_trans_exprdiv_along_chromosomes_last.png")
+ggsave("figures/Fig6_cis_trans_exprdiv_along_chromosomes_last.pdf", device="pdf")
 
 # supplementary fig
 

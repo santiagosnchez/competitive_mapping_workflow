@@ -20,6 +20,9 @@ counts.species = read.csv("../counts/species_counts.txt", row.name=1, sep="\t")
 counts.ase = read.csv("../counts/ase_counts.txt", row.name=1, sep="\t")
 counts.species = counts.species[ rownames(counts.ase), ]
 
+# hermaphroditic genes
+herm_genes = scan("tables/Thomas_et_al_herm_genes.txt", what=character(), sep="\n")
+
 # merge ase counts and data
 counts = cbind(counts.species[,1:6], counts.ase[,seq(1,12,2)] + counts.ase[,seq(2,12,2)], counts.species[,7:12])
 colnames(counts) = c(paste0("Cbr_F",1:3), paste0("Cbr_M",1:3), paste0("HF1_F",1:3), paste0("HF1_M",1:3), paste0("Cni_F",1:3), paste0("Cni_M",1:3))
@@ -79,27 +82,32 @@ df.sex[ df.sex == -1 ] = "female"
 df.sex[ is.na(df.sex) ] = "no expression"
 df.sex$chromosome = sub("\\..*","", rownames(dds))
 df.sex$gene = rownames(dds)
+
 df.sex2 = pivot_longer(df.sex, cols=c(-chromosome,-gene), names_to="species", values_to="sex")
+#df.sex2$sex[ as.character(df.sex2$gene) %in% herm_genes & df.sex2$species == "Cbr" ] = "hermaphrodite"
 
 # generate counts and summaries
-df.sex.count.spp = as.data.frame(df.sex2 %>% group_by(species, sex) %>% summarize(count=n()) %>% mutate(perc = round((count / sum(count))*100,0)))
+df.sex.count.spp = as.data.frame(df.sex2 %>%
+            group_by(species, sex) %>%
+            summarize(count=n()) %>%
+            mutate(perc = round((count / sum(count))*100,0)))
 write.csv(df.sex.count.spp, file="tables/df.counts.perc.DE.sex.csv", row.names=F)
 
 # per chromosome
-df.sex.count.chr = as.data.frame(df.sex2 %>% filter(sex != "no expression") %>% group_by(species, sex, chromosome) %>% summarize(count=n()))
+df.sex.count.chr = as.data.frame(df.sex2 %>% filter(sex != "no expression" | sex != "hermaphrodite") %>% group_by(species, sex, chromosome) %>% summarize(count=n()))
 
 # enrichments
 df.sex.count.chr$p.value = NA
 df.sex.count.chr$enrichment = NA
-x = matrix((df.sex.count.chr %>% filter(species == "Cbr"))$count, ncol=3, nrow=6)
-df.sex.count.chr$p.value[1:18] = as.vector(enrichment(x))
-df.sex.count.chr$enrichment[1:18] = as.vector(enrichment(x, odds.ratio=T))
+x = matrix((df.sex.count.chr %>% filter(species == "Cbr"))$count, ncol=4, nrow=6)
+df.sex.count.chr$p.value[1:24] = as.vector(enrichment(x))
+df.sex.count.chr$enrichment[1:24] = as.vector(enrichment(x, odds.ratio=T))
 x = matrix((df.sex.count.chr %>% filter(species == "Cni"))$count, ncol=3, nrow=6)
-df.sex.count.chr$p.value[19:36] = as.vector(enrichment(x))
-df.sex.count.chr$enrichment[19:36] = as.vector(enrichment(x, odds.ratio=T))
+df.sex.count.chr$p.value[25:42] = as.vector(enrichment(x))
+df.sex.count.chr$enrichment[25:42] = as.vector(enrichment(x, odds.ratio=T))
 x = matrix((df.sex.count.chr %>% filter(species == "F1"))$count, ncol=3, nrow=6)
-df.sex.count.chr$p.value[37:54] = as.vector(enrichment(x))
-df.sex.count.chr$enrichment[37:54] = as.vector(enrichment(x, odds.ratio=T))
+df.sex.count.chr$p.value[43:60] = as.vector(enrichment(x))
+df.sex.count.chr$enrichment[43:60] = as.vector(enrichment(x, odds.ratio=T))
 df.sex.count.chr$chr.pseudo = (1:6)[ factor(df.sex.count.chr$chromosome) ]
 write.csv(df.sex.count.chr, file="tables/DE_per_sex_chr_enrichment.csv", row.names=F, quote=F)
 
@@ -189,11 +197,12 @@ df.exprdiv = rbind(data.frame(logFC=dds.briggsae.vs.nigoni.res.M$log2FoldChange,
 df.exprdiv$chromosome = sub("\\..*","",df.exprdiv$genes)
 df.exprdiv = na.omit(df.exprdiv)
 df.exprdiv$species_DE = paste(df.exprdiv$species, df.exprdiv$DE)
+df.exprdiv$sex[ as.character(df.exprdiv$genes) %in% herm_genes & df.exprdiv$sex == "female" ] = "hermaphrodite"
 
 write.csv(df.exprdiv, file="tables/df.expr_div.per_sex.csv", row.names=F)
 
 # DE expression enrichment per sex
-df.exprdiv2 = df.exprdiv
+df.exprdiv2 = df.exprdiv %>% filter(sex != "hermaphrodite")
 df.exprdiv2$species_DE[ grep("no sig", df.exprdiv2$species_DE) ] = "no sig"
 df.DE.exprdiv.enrich = as.data.frame(df.exprdiv2 %>% group_by(sex, species_DE, chromosome) %>% summarise(count=n()))
 df.DE.exprdiv.enrich$p.value = NA
@@ -289,6 +298,8 @@ df.ase = rbind(data.frame(logFC.sp=dds.briggsae.vs.nigoni.res.M$log2FoldChange,
 df.ase$chromosome = sub("\\..*","",df.ase$genes)
 df.ase = na.omit(df.ase)
 df.ase$species_DE = paste(df.ase$species, df.ase$DE)
+df.ase$sex = as.character(df.ase$sex)
+df.ase$sex[ df.ase$sex == "female" & df.ase$genes %in% herm_genes ] = "hermaphrodite"
 
 write.csv(df.ase, file="tables/df.ase.per_sex.csv", row.names=F)
 
@@ -373,3 +384,117 @@ rownames(df.species_sex_class) = rownames(dds.briggsae.vs.nigoni.sex.res.interac
 df.species_sex = cbind(df.species_sex, models=species_sex_class, df.species_sex_class)
 df.species_sex = df.species_sex[ df.species_sex[,"models"] != "ambiguous", ]
 df.species_sex$models = factor(df.species_sex$models, models.levels)
+
+dnds = read.csv("tables/dnds_propcons_position_domain.csv", row.names=1)
+x = gsub("\\.t[1-9]","", rownames(dds.briggsae.vs.nigoni.sex.res.species))
+dnds = dnds[x,]
+rownames(dnds) = rownames(dds.briggsae.vs.nigoni.sex.res.species)
+df.species_sex$Ka = dnds[rownames(df.species_sex),"dn"]
+df.species_sex$Ks = dnds[rownames(df.species_sex),"ds"]
+df.species_sex$Ks_ENCc = dnds[rownames(df.species_sex),"ds_ENCc"]
+df.species_sex$domain = dnds[rownames(df.species_sex),"domain"]
+models2 = c("C-N-N","B-N-N","N-N-N","C-M-N","B-M-N","N-M-N","B-M-I","N-M-I","C-F-N","B-F-N","N-F-N","B-F-I","N-F-I")[df.species_sex$models]
+df.species_sex$models2 = models2
+
+df.aes.inherit.merged = read.csv("tables/df.cis_trans.inherit.merge.csv")
+
+df.species_sex$class_male = df.species_sex$type_male = df.species_sex$sex2 = NA
+tmp = filter(df.aes.inherit.merged, sex == "male" | sex == "(M) hermaphrodite")
+tmp = tmp[ tmp$gene %in% rownames(df.species_sex),]
+df.species_sex[ as.character(tmp$gene), "type_male"] = as.character(tmp$type)
+df.species_sex[ as.character(tmp$gene), "class_male"] = as.character(tmp$class)
+df.species_sex[ as.character(tmp$gene), "sex2"] = as.character(tmp$sex)
+df.species_sex$sex2 = gsub("(M) hermaphrodite", "hermaphrodite", df.species_sex$sex2)
+df.species_sex$sex2 = gsub("male", "male-female", df.species_sex$sex2)
+
+df.species_sex$class_female = df.species_sex$type_female = NA
+tmp = filter(df.aes.inherit.merged, sex == "female" | sex == "(F) hermaphrodite")
+tmp = tmp[ tmp$gene %in% rownames(df.species_sex),]
+df.species_sex[ as.character(tmp$gene), "type_female"] = as.character(tmp$type)
+df.species_sex[ as.character(tmp$gene), "class_female"] = as.character(tmp$class)
+df.species_sex$chromosome = gsub("\\..*","", rownames(df.species_sex))
+
+write.csv(df.species_sex, file="tables/df.species_sex.csv")
+
+# heatmap of species * sex models
+df.models = unique(df.species_sex[, 8:10])
+df.models$models = unique(df.species_sex[, 7])
+df.models$models2 = unique(df.species_sex[, 14])
+df.models$counts = table(df.species_sex$models)[ df.models$models ]
+rownames(df.models) = 1:dim(df.models)[1]
+df.models2 = pivot_longer(df.models, c(-models, -models2, -counts), names_to="key", values_to="value")
+df.models2$sex = sapply(strsplit(as.character(df.models2$models), " "), function(x) x[2] )
+
+write.csv(df.models2, file="tables/species_sex_models_heatmap.csv", row.names=F)
+
+# counts and propotions
+df.species_sex_class.expr_class_type = data.frame(sex=rep(c("female","male"), each=dim(df.species_sex)[1]),
+												  class=c(as.character(df.species_sex$class_female), as.character(df.species_sex$class_male)),
+												  type=c(as.character(df.species_sex$type_female), as.character(df.species_sex$type_male)),
+												  models=rep(as.character(df.species_sex$models), 2),
+                                                  models2=rep(as.character(df.species_sex$models2), 2),
+												  gene=rep(rownames(df.species_sex), 2))
+df.species_sex_class.expr_class_type$chromosome = sub("\\..*","", df.species_sex_class.expr_class_type$gene)
+
+df.species_sex_class.expr_class.counts = as.data.frame(df.species_sex_class.expr_class_type %>% group_by(sex, models, models2, class) %>% summarize(n = n()) %>% na.omit() %>% mutate(prop=n/sum(n)))
+df.species_sex_class.expr_type.counts = as.data.frame(df.species_sex_class.expr_class_type %>% group_by(sex, models, models2, type) %>% summarize(n = n()) %>% na.omit() %>% mutate(prop=n/sum(n)))
+
+write.csv(df.species_sex_class.expr_type.counts, file="tables/df.species_sex_class.expr_type.counts.csv", row.names=F)
+write.csv(df.species_sex_class.expr_class.counts, file="tables/df.species_sex_class.expr_class.counts.csv", row.names=F)
+
+# scaled data for reaction norms
+
+dds.briggsae.vs.nigoni.sex.rlog = rlog(counts(dds.briggsae.vs.nigoni.sex), blind=F)
+scaledata = t(scale(t(dds.briggsae.vs.nigoni.sex.rlog)))
+rownames(scaledata) = rownames(dds.briggsae.vs.nigoni.sex.res.species)
+scaledata = data.frame(CbrF=rowMeans(scaledata[,1:3]), CbrM=rowMeans(scaledata[,4:6]), CniF=rowMeans(scaledata[,7:9]), CniM=rowMeans(scaledata[,10:12]))
+
+# vector with models
+models = df.species_sex$models2
+names(models) = rownames(df.species_sex)
+
+# subsample
+scaledata = as.data.frame(scaledata[names(models),])
+
+# add data
+scaledata$models = models
+scaledata$gene = names(models)
+
+# melt dataframe
+df.models = pivot_longer(scaledata, c(-models, -gene), names_to="samples", values_to="expression")
+df.models$species = substr(df.models$samples, 1, 3)
+df.models$species = c("C. briggsae","C. nigoni")[ factor(df.models$species) ]
+df.models$sex = substr(df.models$samples, 4, 4)
+df.models$sex = c("female","male")[ factor(df.models$sex) ]
+df.models$sex[ grep("sex-neutral", df.models$models) ] = "sex-neutral"
+write.csv(df.models, file="tables/df.full_species_sex_reaction_norms.csv", row.names=F)
+
+# get centroids
+df.models.cent = as.data.frame(df.models %>% group_by(models, samples) %>% summarize(expr=mean(expression), upper=quantile(expression, .95), lower=quantile(expression, .05)) %>% select(models, samples, expression = expr, upper, lower))
+df.models.cent$species = substr(df.models.cent$samples, 1, 3)
+df.models.cent$sex = substr(df.models.cent$samples, 4, 4)
+df.models.cent$gene = "centroid"
+df.models.cent$species = c("C. briggsae","C. nigoni")[ factor(df.models.cent$species) ]
+df.models.cent$sex = c("female","male")[ factor(df.models.cent$sex) ]
+write.csv(df.models.cent, file="tables/df.centroides_and_CI.species_sex_reaction_norms.csv", row.names=F)
+
+
+# cis divergence and molecular evolution
+dnds = read.csv("tables/dnds_propcons_position_domain.csv", row.names=1)
+tmp1 = filter(cis_trans.data, sex == "male" | sex == "(M) hermaphrodite")
+tmp1 = filter(cis_trans.data, sex == "female" | sex == "(F) hermaphrodite")
+tmp1 = filter(cis_trans.data, sex == "male" | sex == "(M) hermaphrodite")
+tmp2 = filter(cis_trans.data, sex == "female" | sex == "(F) hermaphrodite")
+tmp1.1 = gsub("\\.t[1-9]","", tmp1$genes)
+tmp2.1 = gsub("\\.t[1-9]","", tmp2$genes)
+dnds.1 = dnds[tmp1.1,]
+dnds.2 = dnds[tmp2.1,]
+cis_trans.data_molevol = cbind(cis_trans.data, rbind(dnds.1, dnds.2))
+write.csv(cis_trans.data_molevol, file="tables/df.cis_divergence.molevol.csv", row.names=F)
+
+
+# trans-only = "yellow"
+# cis-only = "cyan blue"
+# cis+trans = "green"
+# cis x trans = "pale pink"
+# cis-trans = "dark pink"

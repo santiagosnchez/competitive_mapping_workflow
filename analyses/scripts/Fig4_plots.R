@@ -20,19 +20,69 @@ library(raster) # distance between points
 library(eulerr) # for venn diagrams
 theme_set(theme_cowplot())
 
-df.species_sex_class = read.csv("df.species_sex_class.csv", row.names=1)
-df.species_sex_class.expr_type.counts = read.csv("df.species_sex_class.expr_type.counts.csv")
-df.species_sex_class.expr_class.counts = read.csv("df.species_sex_class.expr_class.counts.csv")
-df.models2 = read.csv("species_sex_models_heatmap.csv")
+df.species_sex_class = read.csv("tables/df.species_sex.csv", row.names=1)
+df.species_sex_class.expr_type.counts = read.csv("tables/df.species_sex_class.expr_type.counts.csv")
+df.species_sex_class.expr_class.counts = read.csv("tables/df.species_sex_class.expr_class.counts.csv")
+df.models2 = read.csv("tables/species_sex_models_heatmap.csv")
 
 class.levels = c("no change","ambiguous","additive","C. briggsae dominant", "C. nigoni dominant","overdominant","underdominant")
-type.levels = c("conserved","ambiguous","trans only","cis only","cis-trans (enhancing)","cis-trans (compensatory)")
+type.levels = c("conserved","ambiguous","trans only","cis only","cis + trans (enhancing)","cis-trans (compensatory)","cis x trans (compensatory)")
 models.levels = sort(unique(as.character(df.species_sex_class$models)))[c(8,5,13,7,4,12,3,11,6,2,10,1,9)]
 
 df.species_sex_class.expr_class.counts$class = factor(df.species_sex_class.expr_class.counts$class, class.levels)
 df.species_sex_class.expr_type.counts$type = factor(df.species_sex_class.expr_type.counts$type, type.levels)
 df.species_sex_class$models = factor(df.species_sex_class$models, models.levels)
 df.models2$models = factor(df.models2$models, models.levels)
+
+# reaction norms
+
+models.levels = c("C-N-N","B-N-N","N-N-N","C-M-N","B-M-N","B-M-I","N-M-N","N-M-I","C-F-N","B-F-N","B-F-I","N-F-N","N-F-I")
+df.models.cent$models = factor(df.models.cent$models, models.levels)
+
+cons = ggplot(filter(df.models.cent, models %in% c("C-N-N","B-N-N","N-N-N")),
+        aes(x=species, y=expression, group=sex)) +
+    geom_ribbon(aes(ymax=upper, ymin=lower), fill="grey", alpha=0.5) +
+    geom_line(aes(color=sex), size=1.5) +
+    facet_rep_grid("conserved"~models) +
+    scale_y_continuous(breaks=c(-1,0,1)) +
+    scale_x_discrete(expand=c(0.1,0.1)) +
+    labs(x="",y="") +
+    #background_grid(major="y") +
+    theme(axis.text.x=element_text(face="italic", size=10)) +
+    scale_color_manual(values=cols.sex[1:2])
+
+male_biased = ggplot(filter(df.models.cent, models %in% c("C-M-N","B-M-N","B-M-I","N-M-N","N-M-I")),
+        aes(x=species, y=expression, group=sex)) +
+    geom_ribbon(aes(ymax=upper, ymin=lower), fill="grey", alpha=0.5) +
+    geom_line(aes(color=sex), size=1.5, show.legend=F) +
+    facet_rep_grid("male-biased"~models) +
+    scale_y_continuous(breaks=c(-1,0,1)) +
+    scale_x_discrete(expand=c(0.1,0.1)) +
+    labs(x="",y="normalized expression") +
+    #background_grid(major="y") +
+    theme(axis.text.x=element_text(face="italic", size=10)) +
+    scale_color_manual(values=cols.sex[1:2])
+
+female_biased = ggplot(filter(df.models.cent, models %in% c("C-F-N","B-F-N","B-F-I","N-F-N","N-F-I")),
+        aes(x=species, y=expression, group=sex)) +
+    geom_ribbon(aes(ymax=upper, ymin=lower), fill="grey", alpha=0.5) +
+    geom_line(aes(color=sex), size=1.5, show.legend=F) +
+    facet_rep_grid("female-biased"~models) +
+    scale_y_continuous(breaks=c(-1,0,1)) +
+    scale_x_discrete(expand=c(0.1,0.1)) +
+    labs(x="",y="") +
+    #background_grid(major="y") +
+    theme(axis.text.x=element_text(face="italic", size=10)) +
+    scale_color_manual(values=cols.sex[1:2])
+
+plot_grid(cons + theme(plot.margin = unit(c(t = 0, r = 9, b = 0, l = 0), "cm")),
+        male_biased + theme(plot.margin = unit(c(t = 0, r = 0, b = 0, l = 0), "cm")),
+        female_biased + theme(plot.margin = unit(c(t = 0, r = 0, b = 0, l = 0), "cm")),
+        nrow=3)
+
+
+
+
 
 # spermatogenic genes
 

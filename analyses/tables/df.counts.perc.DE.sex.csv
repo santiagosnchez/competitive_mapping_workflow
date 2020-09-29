@@ -1,8 +1,9 @@
 "species","sex","count","perc"
 "Cbr","female",3939,29
-"Cbr","male",3885,28
+"Cbr","hermaphrodite",1238,9
+"Cbr","male",2672,20
 "Cbr","no expression",94,1
-"Cbr","sex-neutral",5718,42
+"Cbr","sex-neutral",5693,42
 "Cni","female",3725,27
 "Cni","male",4041,30
 "Cni","no expression",40,0
