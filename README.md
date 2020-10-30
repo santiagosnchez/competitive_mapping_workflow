@@ -38,6 +38,13 @@ This contains two subdirectories [scripts](https://github.com/santiagosnchez/com
 
 Running some of the `r` scripts will overwrite the files already in that directory. So do it carefully!
 
+### Extra files
+
+`briggsae.nigoni.1-to-1.orto.dnds_final.csv` --> Includes dN, dS estimates for each ortholog
+`c_briggsae_genes_conv_to_wormbase.csv` --> CSV tables with equivalent gene names for the current *C. briggsae* WormBase release ([PRJNA10731](http://www.ncbi.nlm.nih.gov/bioproject/PRJNA10731))
+`orthologs.txt` --> A list with *C. briggsae* and *C. nigoni* orthologs
+`samples.txt` --> List of sample names used for renaming files
+
 ## Requirements
 
 ### Unix command-line programs
