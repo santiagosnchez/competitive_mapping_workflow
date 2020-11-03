@@ -2,7 +2,7 @@
 
 library(polyester)
 library(Biostrings)
-library(ggplot)
+library(ggplot2)
 library(tidyr)
 
 # make a function to return a matrix with col = number of treatments
