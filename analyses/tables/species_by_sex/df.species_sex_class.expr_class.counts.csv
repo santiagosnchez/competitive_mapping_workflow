@@ -1,56 +1,56 @@
 "sex","models","models2","class","n","prop"
 "female","briggsae female-biased interaction","B-F-I","additive",81,0.068936170212766
 "female","briggsae female-biased interaction","B-F-I","ambiguous",25,0.0212765957446809
-"female","briggsae female-biased interaction","B-F-I","C. briggsae dominant",227,0.193191489361702
+"female","briggsae female-biased interaction","B-F-I","C. briggsae dominant",228,0.194042553191489
 "female","briggsae female-biased interaction","B-F-I","C. nigoni dominant",76,0.0646808510638298
 "female","briggsae female-biased interaction","B-F-I","no change",10,0.00851063829787234
-"female","briggsae female-biased interaction","B-F-I","overdominant",697,0.593191489361702
+"female","briggsae female-biased interaction","B-F-I","overdominant",696,0.592340425531915
 "female","briggsae female-biased interaction","B-F-I","underdominant",59,0.0502127659574468
-"female","briggsae female-biased no_interaction","B-F-N","additive",52,0.0397857689364958
-"female","briggsae female-biased no_interaction","B-F-N","ambiguous",36,0.0275439938791125
-"female","briggsae female-biased no_interaction","B-F-N","C. briggsae dominant",158,0.12088752869166
-"female","briggsae female-biased no_interaction","B-F-N","C. nigoni dominant",93,0.0711553175210406
-"female","briggsae female-biased no_interaction","B-F-N","no change",11,0.00841622035195103
-"female","briggsae female-biased no_interaction","B-F-N","overdominant",882,0.674827850038256
-"female","briggsae female-biased no_interaction","B-F-N","underdominant",75,0.0573833205814843
-"female","briggsae male-biased interaction","B-M-I","additive",98,0.102510460251046
-"female","briggsae male-biased interaction","B-M-I","ambiguous",41,0.0428870292887029
-"female","briggsae male-biased interaction","B-M-I","C. briggsae dominant",45,0.047071129707113
-"female","briggsae male-biased interaction","B-M-I","C. nigoni dominant",581,0.607740585774059
-"female","briggsae male-biased interaction","B-M-I","no change",16,0.0167364016736402
-"female","briggsae male-biased interaction","B-M-I","overdominant",26,0.0271966527196653
-"female","briggsae male-biased interaction","B-M-I","underdominant",149,0.155857740585774
-"female","briggsae male-biased no_interaction","B-M-N","additive",31,0.0707762557077626
-"female","briggsae male-biased no_interaction","B-M-N","ambiguous",70,0.159817351598174
-"female","briggsae male-biased no_interaction","B-M-N","C. briggsae dominant",49,0.111872146118721
-"female","briggsae male-biased no_interaction","B-M-N","C. nigoni dominant",134,0.305936073059361
-"female","briggsae male-biased no_interaction","B-M-N","no change",33,0.0753424657534247
-"female","briggsae male-biased no_interaction","B-M-N","overdominant",41,0.0936073059360731
-"female","briggsae male-biased no_interaction","B-M-N","underdominant",80,0.182648401826484
+"female","briggsae female-biased no_interaction","B-F-N","additive",52,0.0398162327718224
+"female","briggsae female-biased no_interaction","B-F-N","ambiguous",34,0.0260336906584992
+"female","briggsae female-biased no_interaction","B-F-N","C. briggsae dominant",158,0.120980091883614
+"female","briggsae female-biased no_interaction","B-F-N","C. nigoni dominant",92,0.0704441041347626
+"female","briggsae female-biased no_interaction","B-F-N","no change",11,0.00842266462480858
+"female","briggsae female-biased no_interaction","B-F-N","overdominant",882,0.675344563552833
+"female","briggsae female-biased no_interaction","B-F-N","underdominant",77,0.05895865237366
+"female","briggsae male-biased interaction","B-M-I","additive",98,0.102403343782654
+"female","briggsae male-biased interaction","B-M-I","ambiguous",41,0.0428422152560084
+"female","briggsae male-biased interaction","B-M-I","C. briggsae dominant",45,0.0470219435736677
+"female","briggsae male-biased interaction","B-M-I","C. nigoni dominant",581,0.607105538140021
+"female","briggsae male-biased interaction","B-M-I","no change",16,0.0167189132706374
+"female","briggsae male-biased interaction","B-M-I","overdominant",27,0.0282131661442006
+"female","briggsae male-biased interaction","B-M-I","underdominant",149,0.155694879832811
+"female","briggsae male-biased no_interaction","B-M-N","additive",31,0.0706150341685649
+"female","briggsae male-biased no_interaction","B-M-N","ambiguous",71,0.161731207289294
+"female","briggsae male-biased no_interaction","B-M-N","C. briggsae dominant",49,0.111617312072893
+"female","briggsae male-biased no_interaction","B-M-N","C. nigoni dominant",134,0.305239179954442
+"female","briggsae male-biased no_interaction","B-M-N","no change",33,0.0751708428246014
+"female","briggsae male-biased no_interaction","B-M-N","overdominant",41,0.0933940774487472
+"female","briggsae male-biased no_interaction","B-M-N","underdominant",80,0.182232346241458
 "female","briggsae sex-neutral no_interaction","B-N-N","additive",86,0.0966292134831461
 "female","briggsae sex-neutral no_interaction","B-N-N","ambiguous",66,0.0741573033707865
 "female","briggsae sex-neutral no_interaction","B-N-N","C. briggsae dominant",112,0.125842696629213
-"female","briggsae sex-neutral no_interaction","B-N-N","C. nigoni dominant",223,0.250561797752809
+"female","briggsae sex-neutral no_interaction","B-N-N","C. nigoni dominant",222,0.249438202247191
 "female","briggsae sex-neutral no_interaction","B-N-N","no change",38,0.0426966292134831
 "female","briggsae sex-neutral no_interaction","B-N-N","overdominant",209,0.234831460674157
-"female","briggsae sex-neutral no_interaction","B-N-N","underdominant",156,0.175280898876404
-"female","conserved female-biased no_interaction","C-F-N","ambiguous",51,0.0516717325227964
-"female","conserved female-biased no_interaction","C-F-N","C. briggsae dominant",2,0.00202634245187437
-"female","conserved female-biased no_interaction","C-F-N","C. nigoni dominant",5,0.00506585612968592
-"female","conserved female-biased no_interaction","C-F-N","no change",56,0.0567375886524823
-"female","conserved female-biased no_interaction","C-F-N","overdominant",781,0.79128672745694
-"female","conserved female-biased no_interaction","C-F-N","underdominant",92,0.0932117527862209
-"female","conserved male-biased no_interaction","C-M-N","ambiguous",173,0.181532004197272
+"female","briggsae sex-neutral no_interaction","B-N-N","underdominant",157,0.176404494382022
+"female","conserved female-biased no_interaction","C-F-N","ambiguous",52,0.0526315789473684
+"female","conserved female-biased no_interaction","C-F-N","C. briggsae dominant",2,0.00202429149797571
+"female","conserved female-biased no_interaction","C-F-N","C. nigoni dominant",5,0.00506072874493927
+"female","conserved female-biased no_interaction","C-F-N","no change",56,0.0566801619433198
+"female","conserved female-biased no_interaction","C-F-N","overdominant",781,0.790485829959514
+"female","conserved female-biased no_interaction","C-F-N","underdominant",92,0.0931174089068826
+"female","conserved male-biased no_interaction","C-M-N","ambiguous",174,0.182581322140609
 "female","conserved male-biased no_interaction","C-M-N","C. briggsae dominant",6,0.00629590766002099
 "female","conserved male-biased no_interaction","C-M-N","C. nigoni dominant",2,0.00209863588667366
-"female","conserved male-biased no_interaction","C-M-N","no change",315,0.330535152151102
+"female","conserved male-biased no_interaction","C-M-N","no change",314,0.329485834207765
 "female","conserved male-biased no_interaction","C-M-N","overdominant",90,0.0944386149003148
 "female","conserved male-biased no_interaction","C-M-N","underdominant",367,0.385099685204617
 "female","conserved sex-neutral no_interaction","C-N-N","additive",1,0.000559597090095132
-"female","conserved sex-neutral no_interaction","C-N-N","ambiguous",231,0.129266927811975
+"female","conserved sex-neutral no_interaction","C-N-N","ambiguous",232,0.129826524902071
 "female","conserved sex-neutral no_interaction","C-N-N","C. briggsae dominant",31,0.0173475097929491
 "female","conserved sex-neutral no_interaction","C-N-N","C. nigoni dominant",10,0.00559597090095131
-"female","conserved sex-neutral no_interaction","C-N-N","no change",377,0.210968102965865
+"female","conserved sex-neutral no_interaction","C-N-N","no change",376,0.210408505875769
 "female","conserved sex-neutral no_interaction","C-N-N","overdominant",617,0.345271404588696
 "female","conserved sex-neutral no_interaction","C-N-N","underdominant",520,0.290990486849468
 "female","nigoni female-biased interaction","N-F-I","additive",14,0.141414141414141
@@ -66,25 +66,25 @@
 "female","nigoni female-biased no_interaction","N-F-N","underdominant",23,0.0938775510204082
 "female","nigoni male-biased interaction","N-M-I","additive",119,0.0981038746908491
 "female","nigoni male-biased interaction","N-M-I","ambiguous",16,0.0131904369332234
-"female","nigoni male-biased interaction","N-M-I","C. briggsae dominant",384,0.316570486397362
+"female","nigoni male-biased interaction","N-M-I","C. briggsae dominant",383,0.315746084089035
 "female","nigoni male-biased interaction","N-M-I","C. nigoni dominant",43,0.0354492992580379
 "female","nigoni male-biased interaction","N-M-I","no change",4,0.00329760923330585
 "female","nigoni male-biased interaction","N-M-I","overdominant",39,0.0321516900247321
-"female","nigoni male-biased interaction","N-M-I","underdominant",608,0.50123660346249
-"female","nigoni male-biased no_interaction","N-M-N","additive",84,0.0794701986754967
-"female","nigoni male-biased no_interaction","N-M-N","ambiguous",51,0.0482497634815516
-"female","nigoni male-biased no_interaction","N-M-N","C. briggsae dominant",462,0.437086092715232
-"female","nigoni male-biased no_interaction","N-M-N","C. nigoni dominant",65,0.0614947965941343
-"female","nigoni male-biased no_interaction","N-M-N","no change",12,0.011352885525071
-"female","nigoni male-biased no_interaction","N-M-N","overdominant",38,0.0359508041627247
-"female","nigoni male-biased no_interaction","N-M-N","underdominant",345,0.32639545884579
-"female","nigoni sex-neutral no_interaction","N-N-N","additive",159,0.140088105726872
-"female","nigoni sex-neutral no_interaction","N-N-N","ambiguous",41,0.0361233480176211
-"female","nigoni sex-neutral no_interaction","N-N-N","C. briggsae dominant",309,0.272246696035242
-"female","nigoni sex-neutral no_interaction","N-N-N","C. nigoni dominant",124,0.109251101321586
-"female","nigoni sex-neutral no_interaction","N-N-N","no change",10,0.00881057268722467
-"female","nigoni sex-neutral no_interaction","N-N-N","overdominant",265,0.233480176211454
-"female","nigoni sex-neutral no_interaction","N-N-N","underdominant",227,0.2
+"female","nigoni male-biased interaction","N-M-I","underdominant",609,0.502061005770816
+"female","nigoni male-biased no_interaction","N-M-N","additive",84,0.0795454545454545
+"female","nigoni male-biased no_interaction","N-M-N","ambiguous",51,0.0482954545454545
+"female","nigoni male-biased no_interaction","N-M-N","C. briggsae dominant",462,0.4375
+"female","nigoni male-biased no_interaction","N-M-N","C. nigoni dominant",65,0.0615530303030303
+"female","nigoni male-biased no_interaction","N-M-N","no change",12,0.0113636363636364
+"female","nigoni male-biased no_interaction","N-M-N","overdominant",38,0.0359848484848485
+"female","nigoni male-biased no_interaction","N-M-N","underdominant",344,0.325757575757576
+"female","nigoni sex-neutral no_interaction","N-N-N","additive",159,0.139964788732394
+"female","nigoni sex-neutral no_interaction","N-N-N","ambiguous",41,0.0360915492957746
+"female","nigoni sex-neutral no_interaction","N-N-N","C. briggsae dominant",309,0.272007042253521
+"female","nigoni sex-neutral no_interaction","N-N-N","C. nigoni dominant",124,0.109154929577465
+"female","nigoni sex-neutral no_interaction","N-N-N","no change",10,0.00880281690140845
+"female","nigoni sex-neutral no_interaction","N-N-N","overdominant",265,0.233274647887324
+"female","nigoni sex-neutral no_interaction","N-N-N","underdominant",228,0.200704225352113
 "male","briggsae female-biased interaction","B-F-I","additive",92,0.0782978723404255
 "male","briggsae female-biased interaction","B-F-I","ambiguous",215,0.182978723404255
 "male","briggsae female-biased interaction","B-F-I","C. briggsae dominant",153,0.130212765957447
@@ -92,27 +92,27 @@
 "male","briggsae female-biased interaction","B-F-I","no change",327,0.278297872340426
 "male","briggsae female-biased interaction","B-F-I","overdominant",75,0.0638297872340425
 "male","briggsae female-biased interaction","B-F-I","underdominant",172,0.146382978723404
-"male","briggsae female-biased no_interaction","B-F-N","additive",87,0.0665646518745218
-"male","briggsae female-biased no_interaction","B-F-N","ambiguous",228,0.174445294567712
-"male","briggsae female-biased no_interaction","B-F-N","C. briggsae dominant",288,0.2203519510329
-"male","briggsae female-biased no_interaction","B-F-N","C. nigoni dominant",161,0.12318286151492
-"male","briggsae female-biased no_interaction","B-F-N","no change",305,0.23335883703137
-"male","briggsae female-biased no_interaction","B-F-N","overdominant",82,0.0627390971690895
-"male","briggsae female-biased no_interaction","B-F-N","underdominant",156,0.119357306809487
-"male","briggsae male-biased interaction","B-M-I","additive",163,0.170502092050209
-"male","briggsae male-biased interaction","B-M-I","ambiguous",127,0.132845188284519
-"male","briggsae male-biased interaction","B-M-I","C. briggsae dominant",61,0.0638075313807531
-"male","briggsae male-biased interaction","B-M-I","C. nigoni dominant",405,0.423640167364017
-"male","briggsae male-biased interaction","B-M-I","no change",112,0.117154811715481
-"male","briggsae male-biased interaction","B-M-I","overdominant",19,0.0198744769874477
-"male","briggsae male-biased interaction","B-M-I","underdominant",69,0.0721757322175732
-"male","briggsae male-biased no_interaction","B-M-N","additive",79,0.180365296803653
-"male","briggsae male-biased no_interaction","B-M-N","ambiguous",34,0.0776255707762557
-"male","briggsae male-biased no_interaction","B-M-N","C. briggsae dominant",105,0.23972602739726
-"male","briggsae male-biased no_interaction","B-M-N","C. nigoni dominant",68,0.155251141552511
-"male","briggsae male-biased no_interaction","B-M-N","no change",28,0.0639269406392694
-"male","briggsae male-biased no_interaction","B-M-N","overdominant",46,0.105022831050228
-"male","briggsae male-biased no_interaction","B-M-N","underdominant",78,0.178082191780822
+"male","briggsae female-biased no_interaction","B-F-N","additive",87,0.0666156202143951
+"male","briggsae female-biased no_interaction","B-F-N","ambiguous",228,0.17457886676876
+"male","briggsae female-biased no_interaction","B-F-N","C. briggsae dominant",288,0.22052067381317
+"male","briggsae female-biased no_interaction","B-F-N","C. nigoni dominant",161,0.123277182235835
+"male","briggsae female-biased no_interaction","B-F-N","no change",305,0.23353751914242
+"male","briggsae female-biased no_interaction","B-F-N","overdominant",82,0.0627871362940276
+"male","briggsae female-biased no_interaction","B-F-N","underdominant",155,0.118683001531394
+"male","briggsae male-biased interaction","B-M-I","additive",163,0.170323928944619
+"male","briggsae male-biased interaction","B-M-I","ambiguous",128,0.133751306165099
+"male","briggsae male-biased interaction","B-M-I","C. briggsae dominant",61,0.0637408568443051
+"male","briggsae male-biased interaction","B-M-I","C. nigoni dominant",405,0.423197492163009
+"male","briggsae male-biased interaction","B-M-I","no change",112,0.117032392894462
+"male","briggsae male-biased interaction","B-M-I","overdominant",19,0.0198537095088819
+"male","briggsae male-biased interaction","B-M-I","underdominant",69,0.0721003134796238
+"male","briggsae male-biased no_interaction","B-M-N","additive",79,0.17995444191344
+"male","briggsae male-biased no_interaction","B-M-N","ambiguous",34,0.0774487471526196
+"male","briggsae male-biased no_interaction","B-M-N","C. briggsae dominant",105,0.239179954441913
+"male","briggsae male-biased no_interaction","B-M-N","C. nigoni dominant",68,0.154897494305239
+"male","briggsae male-biased no_interaction","B-M-N","no change",28,0.0637813211845103
+"male","briggsae male-biased no_interaction","B-M-N","overdominant",47,0.107061503416856
+"male","briggsae male-biased no_interaction","B-M-N","underdominant",78,0.177676537585421
 "male","briggsae sex-neutral no_interaction","B-N-N","additive",89,0.1
 "male","briggsae sex-neutral no_interaction","B-N-N","ambiguous",104,0.11685393258427
 "male","briggsae sex-neutral no_interaction","B-N-N","C. briggsae dominant",262,0.29438202247191
@@ -120,13 +120,13 @@
 "male","briggsae sex-neutral no_interaction","B-N-N","no change",121,0.135955056179775
 "male","briggsae sex-neutral no_interaction","B-N-N","overdominant",161,0.180898876404494
 "male","briggsae sex-neutral no_interaction","B-N-N","underdominant",46,0.051685393258427
-"male","conserved female-biased no_interaction","C-F-N","additive",6,0.0060790273556231
-"male","conserved female-biased no_interaction","C-F-N","ambiguous",230,0.233029381965552
-"male","conserved female-biased no_interaction","C-F-N","C. briggsae dominant",77,0.0780141843971631
-"male","conserved female-biased no_interaction","C-F-N","C. nigoni dominant",33,0.033434650455927
-"male","conserved female-biased no_interaction","C-F-N","no change",455,0.460992907801418
-"male","conserved female-biased no_interaction","C-F-N","overdominant",100,0.101317122593718
-"male","conserved female-biased no_interaction","C-F-N","underdominant",86,0.0871327254305978
+"male","conserved female-biased no_interaction","C-F-N","additive",6,0.00607287449392713
+"male","conserved female-biased no_interaction","C-F-N","ambiguous",230,0.232793522267206
+"male","conserved female-biased no_interaction","C-F-N","C. briggsae dominant",77,0.0779352226720648
+"male","conserved female-biased no_interaction","C-F-N","C. nigoni dominant",33,0.0334008097165992
+"male","conserved female-biased no_interaction","C-F-N","no change",455,0.460526315789474
+"male","conserved female-biased no_interaction","C-F-N","overdominant",100,0.101214574898785
+"male","conserved female-biased no_interaction","C-F-N","underdominant",87,0.0880566801619433
 "male","conserved male-biased no_interaction","C-M-N","additive",2,0.00209863588667366
 "male","conserved male-biased no_interaction","C-M-N","ambiguous",188,0.197271773347324
 "male","conserved male-biased no_interaction","C-M-N","C. briggsae dominant",121,0.126967471143757
@@ -162,17 +162,17 @@
 "male","nigoni male-biased interaction","N-M-I","no change",135,0.111294311624073
 "male","nigoni male-biased interaction","N-M-I","overdominant",176,0.145094806265458
 "male","nigoni male-biased interaction","N-M-I","underdominant",478,0.394064303380049
-"male","nigoni male-biased no_interaction","N-M-N","additive",119,0.112582781456954
-"male","nigoni male-biased no_interaction","N-M-N","ambiguous",100,0.0946073793755913
-"male","nigoni male-biased no_interaction","N-M-N","C. briggsae dominant",293,0.277199621570483
-"male","nigoni male-biased no_interaction","N-M-N","C. nigoni dominant",161,0.152317880794702
-"male","nigoni male-biased no_interaction","N-M-N","no change",86,0.0813623462630085
-"male","nigoni male-biased no_interaction","N-M-N","overdominant",115,0.10879848628193
-"male","nigoni male-biased no_interaction","N-M-N","underdominant",183,0.173131504257332
-"male","nigoni sex-neutral no_interaction","N-N-N","additive",178,0.156828193832599
-"male","nigoni sex-neutral no_interaction","N-N-N","ambiguous",132,0.116299559471366
-"male","nigoni sex-neutral no_interaction","N-N-N","C. briggsae dominant",220,0.193832599118943
-"male","nigoni sex-neutral no_interaction","N-N-N","C. nigoni dominant",257,0.226431718061674
-"male","nigoni sex-neutral no_interaction","N-N-N","no change",107,0.094273127753304
-"male","nigoni sex-neutral no_interaction","N-N-N","overdominant",189,0.166519823788546
-"male","nigoni sex-neutral no_interaction","N-N-N","underdominant",52,0.0458149779735683
+"male","nigoni male-biased no_interaction","N-M-N","additive",118,0.111742424242424
+"male","nigoni male-biased no_interaction","N-M-N","ambiguous",99,0.09375
+"male","nigoni male-biased no_interaction","N-M-N","C. briggsae dominant",294,0.278409090909091
+"male","nigoni male-biased no_interaction","N-M-N","C. nigoni dominant",161,0.152462121212121
+"male","nigoni male-biased no_interaction","N-M-N","no change",86,0.0814393939393939
+"male","nigoni male-biased no_interaction","N-M-N","overdominant",115,0.108901515151515
+"male","nigoni male-biased no_interaction","N-M-N","underdominant",183,0.173295454545455
+"male","nigoni sex-neutral no_interaction","N-N-N","additive",179,0.157570422535211
+"male","nigoni sex-neutral no_interaction","N-N-N","ambiguous",132,0.116197183098592
+"male","nigoni sex-neutral no_interaction","N-N-N","C. briggsae dominant",220,0.193661971830986
+"male","nigoni sex-neutral no_interaction","N-N-N","C. nigoni dominant",257,0.226232394366197
+"male","nigoni sex-neutral no_interaction","N-N-N","no change",107,0.0941901408450704
+"male","nigoni sex-neutral no_interaction","N-N-N","overdominant",189,0.16637323943662
+"male","nigoni sex-neutral no_interaction","N-N-N","underdominant",52,0.0457746478873239

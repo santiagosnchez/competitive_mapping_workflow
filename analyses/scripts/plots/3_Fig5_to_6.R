@@ -15,6 +15,7 @@ library(grid)
 library(gridExtra)
 library(RColorBrewer)
 library(viridis)
+library(scales)
 library(venneuler)
 theme_set(theme_cowplot())
 
@@ -54,7 +55,7 @@ cols.heatmap = c(cols.inherit[1],"grey",cols.sex[1],"black",cols.sex[3],cols.inh
 
 # reaction norms
 
-df.models.cent = read.csv("tables/df.centroides_and_CI.species_sex_reaction_norms.csv")
+df.models.cent = read.csv("tables/species_by_sex/df.centroides_and_CI.species_sex_reaction_norms.csv")
 
 models.levels = c("C-N-N","B-N-N","N-N-N","C-M-N","B-M-N","B-M-I","N-M-N","N-M-I","C-F-N","B-F-N","B-F-I","N-F-N","N-F-I")
 df.models.cent$models = factor(df.models.cent$models, models.levels)
@@ -113,25 +114,23 @@ ggsave("figures/Fig5a_species_sex_reaction_norms.png")
 # figure 5 #
 ############
 
-df.species_sex_class = read.csv("tables/df.species_sex.csv", row.names=1)
-df.species_sex_class.expr_type.counts = read.csv("tables/df.species_sex_class.expr_type.counts.csv")
-df.species_sex_class.expr_class.counts = read.csv("tables/df.species_sex_class.expr_class.counts.csv")
-df.models2 = read.csv("tables/species_sex_models_heatmap.csv")
+df.species_sex_class = read.csv("tables/species_by_sex/df.species_sex.csv", row.names=1)
+df.species_sex_class.expr_type.counts = read.csv("tables/species_by_sex/df.species_sex_class.expr_type.counts.csv")
+df.species_sex_class.expr_class.counts = read.csv("tables/species_by_sex/df.species_sex_class.expr_class.counts.csv")
+df.models2 = read.csv("tables/species_by_sex/species_sex_models_heatmap.csv")
 
 df.species_sex_class.expr_class.counts$class = factor(df.species_sex_class.expr_class.counts$class, class.levels)
 df.species_sex_class.expr_type.counts$type = factor(df.species_sex_class.expr_type.counts$type, type.levels)
-df.species_sex_class.expr_class.counts$models = factor(df.species_sex_class.expr_class.counts$models, models.levels)
-df.species_sex_class.expr_type.counts$models = factor(df.species_sex_class.expr_type.counts$models, models.levels)
-df.species_sex_class.expr_class.counts$models2 = factor(df.species_sex_class.expr_class.counts$models2, models.levels2)
-df.species_sex_class.expr_type.counts$models2 = factor(df.species_sex_class.expr_type.counts$models2, models.levels2)
+df.species_sex_class.expr_class.counts$models2 = factor(df.species_sex_class.expr_class.counts$models2, models.levels)
+df.species_sex_class.expr_type.counts$models2 = factor(df.species_sex_class.expr_type.counts$models2, models.levels)
 df.species_sex_class.expr_class.counts$sex2 = sapply(strsplit(as.character(df.species_sex_class.expr_class.counts$models), " "), function(x) x[2] )
 df.species_sex_class.expr_type.counts$sex2 = sapply(strsplit(as.character(df.species_sex_class.expr_type.counts$models), " "), function(x) x[2] )
 df.species_sex_class.expr_class.counts$sex2 = factor(df.species_sex_class.expr_class.counts$sex2, c("sex-neutral","male-biased","female-biased"))
 df.species_sex_class.expr_type.counts$sex2 = factor(df.species_sex_class.expr_type.counts$sex2, c("sex-neutral","male-biased","female-biased"))
-df.species_sex_class$models = factor(df.species_sex_class$models, models.levels)
-df.species_sex_class$models2 = factor(df.species_sex_class$models2, models.levels2)
+#df.species_sex_class$models = factor(df.species_sex_class$models, models.levels)
+df.species_sex_class$models2 = factor(df.species_sex_class$models2, models.levels)
 df.species_sex_class$sex = factor(df.species_sex_class$sex, c("sex-neutral","male-biased","female-biased"))
-df.models2$models = factor(df.models2$models, models.levels)
+df.models2$models2 = factor(df.models2$models2, models.levels)
 df.models2$sex = factor(df.models2$sex, c("sex-neutral","male-biased","female-biased"))
 models.counts = unique(as.character(df.models2$counts))[ order(unique(df.models2$models)) ]
 df.models2$counts = factor(as.character(df.models2$counts), models.counts)
@@ -310,9 +309,9 @@ sperm_herm_models.enrich$sex = factor(sperm_herm_models.enrich$sex, c("sex-neutr
 class.levels = c("no change","ambiguous","C. briggsae dominant", "C. nigoni dominant","additive","overdominant","underdominant")
 class.legend = c("no change","ambiguous",expression(paste(italic("C. briggsae"), " dominant")),
                 expression(paste(italic("C. nigoni"), " dominant")),"additive","overdominant","underdominant")
-sex.levels = c("female","male","(F) hermaphrodite","(M) hermaphrodite")
-df.inherit2 = read.csv("tables/expr_inheritance_logFC_F1_parents.csv")
-df.inherit3 = read.csv("tables/expr_inheritance_chr_enrich.csv")
+sex.levels = c("female","male","(F) hermaphrodite","hermaphrodite")
+df.inherit2 = read.csv("tables/expression_inheritance/expr_inheritance_logFC_F1_parents.csv")
+df.inherit3 = read.csv("tables/expression_inheritance/expr_inheritance_chr_enrich.csv")
 df.inherit2$class = factor(df.inherit2$class, levels=class.levels)
 df.inherit3$class = factor(df.inherit3$class, levels=class.levels)
 df.inherit2$sex = factor(df.inherit2$sex, levels=sex.levels)
@@ -323,8 +322,8 @@ type.levels = c("conserved","ambiguous","trans-only","cis-only", "cis + trans (e
 type.legend = c("conserved","ambiguous",expression(paste(italic("trans"), "-only")), expression(paste(italic("cis"),"-only")),
                 expression(paste(italic("cis + trans"), " (enhancing)")), expression(paste(italic("cis x trans"), " (compensatory)")),
                 expression(paste(italic("cis-trans"), " (compensatory)")))
-df.AS = read.csv("tables/df.cis_trans.regulation_type.auto.csv")
-df.AS2 = read.csv("tables/df.cis_trans.counts.chr_enrich.csv")
+df.AS = read.csv("tables/cis_trans/df.cis_trans.regulation_type.auto.csv")
+df.AS2 = read.csv("tables/cis_trans/df.cis_trans.counts.chr_enrich.csv")
 df.AS$type = factor(df.AS$type, levels=type.levels)
 df.AS2$type = factor(df.AS2$type, levels=type.levels)
 df.AS$sex = factor(df.AS$sex, levels=sex.levels)
@@ -554,17 +553,140 @@ bottom = plot_grid(row1, row2, nrow=2)
 plot_grid(top, bottom, nrow=2)
 ggsave("figures/Fig6_herm_spermatogenesis_inherit_ase_pre.pdf", device="pdf", useDingbats=F)
 
+# her-1 WBGene00038586, V.g17207, Cnig_chr_V.g20275
+df.inherit2 %>% filter(grepl("Cnig_chr_V.g20275", gene))
+df.AS %>% filter(grepl("Cnig_chr_V.g20275", genes))
+df.species_sex_class %>% filter(grepl("Cnig_chr_V.g20275", rownames(df.species_sex_class)))
 
-# TRA-1 WBGene00033987
+# tra-1 WBGene00033987, III.g8535.t1__Cnig_chr_III.g9780.t2
 df.inherit2 %>% filter(grepl("Cnig_chr_III.g9780", gene))
 df.AS %>% filter(grepl("Cnig_chr_III.g9780", genes))
 df.species_sex_class %>% filter(grepl("Cnig_chr_III.g9780", rownames(df.species_sex_class)))
 
-# fog-3 WBGene00033342
+# tra-2 WBGene00032357, II.g4896.t1__Cnig_chr_II.g5233.t3
+df.inherit2 %>% filter(grepl("Cnig_chr_II.g5233", gene))
+df.AS %>% filter(grepl("Cnig_chr_II.g5233", genes))
+df.species_sex_class %>% filter(grepl("Cnig_chr_II.g5233", rownames(df.species_sex_class)))
+
+# tra-3 WBGene00040309, IV.g10811.t1__Cnig_chr_IV.g12476.t2
+df.inherit2 %>% filter(grepl("Cnig_chr_IV.g12476", gene))
+df.AS %>% filter(grepl("Cnig_chr_IV.g12476", genes))
+df.species_sex_class %>% filter(grepl("Cnig_chr_IV.g12476", rownames(df.species_sex_class)))
+
+# fog-1 WBGene00035332, I.g1335__Cnig_chr_I.g907
+# not recovered as a 1-1 ortholog
+df.inherit2 %>% filter(grepl("Cnig_chr_I.g907", gene))
+df.AS %>% filter(grepl("Cnig_chr_I.g907", genes))
+df.species_sex_class %>% filter(grepl("Cnig_chr_I.g907", rownames(df.species_sex_class)))
+
+# fog-2 not found in C. briggase
+
+# fog-3 WBGene00033342, I.g2603.t3__Cnig_chr_I.g2184.t1
 df.inherit2 %>% filter(grepl("Cnig_chr_I.g2184", gene))
 df.AS %>% filter(grepl("Cnig_chr_I.g2184", genes))
 df.species_sex_class %>% filter(grepl("Cnig_chr_I.g2184", rownames(df.species_sex_class)))
 
+# fem-1 WBGene00039054, IV.g11433.t1__Cnig_chr_IV.g13364.t1
+df.inherit2 %>% filter(grepl("Cnig_chr_IV.g13364", gene))
+df.AS %>% filter(grepl("Cnig_chr_IV.g13364", genes))
+df.species_sex_class %>% filter(grepl("Cnig_chr_IV.g13364", rownames(df.species_sex_class)))
+
+# fem-2 WBGene00000328, III.g7416.t1__Cnig_chr_III.g8341.t1
+df.inherit2 %>% filter(grepl("Cnig_chr_III.g8341", gene))
+df.AS %>% filter(grepl("Cnig_chr_III.g8341", genes))
+df.species_sex_class %>% filter(grepl("Cnig_chr_III.g8341", rownames(df.species_sex_class)))
+
+# fem-3 WBGene00000329, IV.g11153.t1__Cnig_chr_IV.g13029.t1
+df.inherit2 %>% filter(grepl("Cnig_chr_IV.g13029", gene))
+df.AS %>% filter(grepl("Cnig_chr_IV.g13029", genes))
+df.species_sex_class %>% filter(grepl("Cnig_chr_IV.g13029", rownames(df.species_sex_class)))
+
+df.sexdet.sex_species = df.species_sex_class %>% filter(grepl("Cnig_chr_V.g20275", rownames(df.species_sex_class))) %>% mutate(gene="her-1")
+df.sexdet.sex_species = rbind(df.sexdet.sex_species, df.species_sex_class %>% filter(grepl("Cnig_chr_III.g9780", rownames(df.species_sex_class))) %>% mutate(gene="tra-1"))
+df.sexdet.sex_species = rbind(df.sexdet.sex_species, df.species_sex_class %>% filter(grepl("Cnig_chr_II.g5233", rownames(df.species_sex_class))) %>% mutate(gene="tra-2"))
+df.sexdet.sex_species = rbind(df.sexdet.sex_species, df.species_sex_class %>% filter(grepl("Cnig_chr_IV.g12476", rownames(df.species_sex_class))) %>% mutate(gene="tra-3"))
+df.sexdet.sex_species = rbind(df.sexdet.sex_species, df.species_sex_class %>% filter(grepl("Cnig_chr_I.g907", rownames(df.species_sex_class))) %>% mutate(gene="fog-1"))
+df.sexdet.sex_species = rbind(df.sexdet.sex_species, df.species_sex_class %>% filter(grepl("Cnig_chr_I.g2184", rownames(df.species_sex_class))) %>% mutate(gene="fog-3"))
+df.sexdet.sex_species = rbind(df.sexdet.sex_species, df.species_sex_class %>% filter(grepl("Cnig_chr_IV.g13364", rownames(df.species_sex_class))) %>% mutate(gene="fem-1"))
+df.sexdet.sex_species = rbind(df.sexdet.sex_species, df.species_sex_class %>% filter(grepl("Cnig_chr_III.g8341", rownames(df.species_sex_class))) %>% mutate(gene="fem-2"))
+df.sexdet.sex_species = rbind(df.sexdet.sex_species, df.species_sex_class %>% filter(grepl("Cnig_chr_IV.g13029", rownames(df.species_sex_class))) %>% mutate(gene="fem-3"))
+
+
+rlogdata = read.csv("tables/MDS_plot/rlog-transformed_exprdata.csv", row.names=1)
+rlogdata.means = data.frame(CbrF=rowMeans(rlogdata[,1:3]),
+                            CbrM=rowMeans(rlogdata[,4:6]),
+                            HF1F=rowMeans(rlogdata[,7:9]),
+                            HF1M=rowMeans(rlogdata[,10:12]),
+                            CniF=rowMeans(rlogdata[,13:15]),
+                            CniM=rowMeans(rlogdata[,16:18]))
+scaledata = t(scale(t(rlogdata.means)))
+
+tmp = data.frame(expression=scaledata["V.g17207__Cnig_chr_V.g20275",], samples=colnames(scaledata)) %>%
+    mutate(sex=c("female","male")[ factor(substr(samples, 4, 4)) ], species=substr(samples, 1, 3), gene="her-1")
+tmp = rbind(tmp, data.frame(expression=scaledata["III.g8535.t1__Cnig_chr_III.g9780.t2",], samples=colnames(scaledata)) %>%
+    mutate(sex=c("female","male")[ factor(substr(samples, 4, 4)) ], species=substr(samples, 1, 3), gene="tra-1"))
+tmp = rbind(tmp, data.frame(expression=scaledata["II.g4896.t1__Cnig_chr_II.g5233.t3",], samples=colnames(scaledata)) %>%
+    mutate(sex=c("female","male")[ factor(substr(samples, 4, 4)) ], species=substr(samples, 1, 3), gene="tra-2"))
+tmp = rbind(tmp, data.frame(expression=scaledata["IV.g10811.t1__Cnig_chr_IV.g12476.t2",], samples=colnames(scaledata)) %>%
+    mutate(sex=c("female","male")[ factor(substr(samples, 4, 4)) ], species=substr(samples, 1, 3), gene="tra-3"))
+tmp = rbind(tmp, data.frame(expression=scaledata["I.g1335__Cnig_chr_I.g907",], samples=colnames(scaledata)) %>%
+    mutate(sex=c("female","male")[ factor(substr(samples, 4, 4)) ], species=substr(samples, 1, 3), gene="fog-1"))
+tmp = rbind(tmp, data.frame(expression=scaledata["I.g2603.t3__Cnig_chr_I.g2184.t1",], samples=colnames(scaledata)) %>%
+    mutate(sex=c("female","male")[ factor(substr(samples, 4, 4)) ], species=substr(samples, 1, 3), gene="fog-3"))
+tmp = rbind(tmp, data.frame(expression=scaledata["IV.g11433.t1__Cnig_chr_IV.g13364.t1",], samples=colnames(scaledata)) %>%
+    mutate(sex=c("female","male")[ factor(substr(samples, 4, 4)) ], species=substr(samples, 1, 3), gene="fem-1"))
+tmp = rbind(tmp, data.frame(expression=scaledata["III.g7416.t1__Cnig_chr_III.g8341.t1",], samples=colnames(scaledata)) %>%
+    mutate(sex=c("female","male")[ factor(substr(samples, 4, 4)) ], species=substr(samples, 1, 3), gene="fem-2"))
+tmp = rbind(tmp, data.frame(expression=scaledata["IV.g11153.t1__Cnig_chr_IV.g13029.t1",], samples=colnames(scaledata)) %>%
+    mutate(sex=c("female","male")[ factor(substr(samples, 4, 4)) ], species=substr(samples, 1, 3), gene="fem-3"))
+df.sexdet.expr = tmp
+
+tra_fog_fem = ggplot(df.sexdet.expr, aes(x=species, y=expression, group=sex, color=sex)) +
+    geom_line(size=2) +
+    scale_x_discrete(limits=c("Cbr","HF1","Cni")) +
+    facet_rep_wrap(~gene) +
+    scale_color_manual(values=cols.sex[c(1,3)], name=NULL) +
+    xlab("") +
+    background_grid()
+
+tmp = df.AS %>% filter(grepl("Cnig_chr_V.g20275", genes)) %>% mutate(gene="her-1")
+tmp = rbind(tmp, df.AS %>% filter(grepl("Cnig_chr_III.g9780", genes)) %>% mutate(gene="tra-1"))
+tmp = rbind(tmp, df.AS %>% filter(grepl("Cnig_chr_II.g5233", genes)) %>% mutate(gene="tra-2"))
+tmp = rbind(tmp, df.AS %>% filter(grepl("Cnig_chr_IV.g12476", genes)) %>% mutate(gene="tra-3"))
+tmp = rbind(tmp, df.AS %>% filter(grepl("Cnig_chr_I.g907", genes)) %>% mutate(gene="fog-1"))
+tmp = rbind(tmp, df.AS %>% filter(grepl("Cnig_chr_I.g2184", genes)) %>% mutate(gene="fog-3"))
+tmp = rbind(tmp, df.AS %>% filter(grepl("Cnig_chr_IV.g13364", genes)) %>% mutate(gene="fem-1"))
+tmp = rbind(tmp, df.AS %>% filter(grepl("Cnig_chr_III.g8341", genes)) %>% mutate(gene="fem-2"))
+tmp = rbind(tmp, df.AS %>% filter(grepl("Cnig_chr_IV.g13029", genes)) %>% mutate(gene="fem-3"))
+tmp = tmp %>% mutate(sex=sub("\\(M\\) hermaphrodite","male",sex))
+df.sexdet.cis_trans = tmp
+
+tra_fog_fem_cis_trans = ggplot(df.sexdet.cis_trans, aes(logFC.sp, logFC.ase, color=sex, label=gene)) +
+    geom_point(data=df.AS, aes(logFC.sp, logFC.ase), color="grey80", alpha=0.1, inherit.aes=F) +
+	geom_hline(yintercept=0, linetype=2) +
+	geom_vline(xintercept=0, linetype=2) +
+    scale_x_continuous(expand=c(0,0), limits=c(-4,4)) +
+    scale_y_continuous(expand=c(0,0), limits=c(-4,2)) +
+    geom_abline(slope=1, linetype=2) +
+    geom_point(show.legend=F, size=2, color="black") +
+	geom_label_repel(show.legend=T, size=4, min.segment.length=0, nudge_x=.2, key_glyph = "point") +
+    #scale_shape_manual(values=c(10,11,12,13,15,17,18)) +
+	scale_color_manual(values=cols.sex, name="") +
+    annotate(geom="text", x=-3, y=.2, label="trans-only") +
+    annotate(geom="text", x=1.6, y=-3.8, label="cis-trans (compensatory)") +
+    annotate(geom="text", x=-2.5, y=-1.8, label="cis-only") +
+	ylab(expression(paste(bold("ASE"), " [log"[2],"(",italic("Cnig"),"/",italic("Cbri"),")]", sep=''))) +
+	xlab(expression(paste(bold("P"), " [log"[2],"(",italic("Cnig"),"/",italic("Cbri"),")]", sep=''))) +
+	background_grid(major="xy", size.major = 0.2, colour.major = "grey75") +
+	#facet_rep_wrap(~sex, ncol=1, strip.position="right") +
+	theme(strip.background = element_rect(fill="grey90", color=NA),
+        legend.position=c(.7,.25)) #+
+	#theme(strip.background = element_blank(), strip.text=element_blank(),
+	#			axis.title.y=element_text(margin=margin(t = 0, r = -5, b = 0, l = 0)))
+
+plot_grid(tra_fog_fem, tra_fog_fem_cis_trans, ncol=2, rel_widths=c(.5,.4))
+ggsave("figures/Suppl_Fig_sexdet.png", device="png")
+ggsave("figures/Suppl_Fig_sexdet.pdf", device="pdf", useDingbats=F)
 #
 #
 #

@@ -17,6 +17,8 @@ library(RColorBrewer)
 library(viridis)
 theme_set(theme_cowplot())
 
+source("scripts/data/enrichment_fun.R")
+
 #### Plots
 
 # load expression inheritance data
@@ -24,24 +26,20 @@ class.levels = c("no change","ambiguous","C. briggsae dominant", "C. nigoni domi
 class.legend = c("no change","ambiguous",expression(paste(italic("C. briggsae"), " dominant")),
                 expression(paste(italic("C. nigoni"), " dominant")),"additive","overdominant","underdominant")
 sex.levels = c("female","male","(F) hermaphrodite","(M) hermaphrodite")
-df.inherit2 = read.csv("tables/expr_inheritance_logFC_F1_parents.csv")
-df.inherit3 = read.csv("tables/expr_inheritance_chr_enrich.csv")
+df.inherit2 = read.csv("tables/expression_inheritance/expr_inheritance_logFC_F1_parents.csv")
+df.inherit3 = read.csv("tables/expression_inheritance/expr_inheritance_chr_enrich.csv")
 df.inherit2$class = factor(df.inherit2$class, levels=class.levels)
 df.inherit3$class = factor(df.inherit3$class, levels=class.levels)
-df.inherit2$sex = factor(df.inherit2$sex, levels=sex.levels)
-df.inherit3$sex = factor(df.inherit3$sex, levels=sex.levels)
 
 # load cis-trans regulatory data
 type.levels = c("conserved","ambiguous","trans-only","cis-only", "cis + trans (enhancing)", "cis x trans (compensatory)", "cis-trans (compensatory)")
 type.legend = c("conserved","ambiguous",expression(paste(italic("trans"), "-only")), expression(paste(italic("cis"),"-only")),
                 expression(paste(italic("cis + trans"), " (enhancing)")), expression(paste(italic("cis x trans"), " (compensatory)")),
                 expression(paste(italic("cis-trans"), " (compensatory)")))
-df.AS = read.csv("tables/df.cis_trans.regulation_type.auto.csv")
-df.AS2 = read.csv("tables/df.cis_trans.counts.chr_enrich.csv")
+df.AS = read.csv("tables/cis_trans/df.cis_trans.regulation_type.auto.csv")
+df.AS2 = read.csv("tables/cis_trans/df.cis_trans.counts.chr_enrich.csv")
 df.AS$type = factor(df.AS$type, levels=type.levels)
 df.AS2$type = factor(df.AS2$type, levels=type.levels)
-df.AS$sex = factor(df.AS$sex, levels=sex.levels)
-df.AS2$sex = factor(df.AS2$sex, levels=sex.levels)
 
 # get colors
 # species
@@ -359,10 +357,10 @@ ggsave("figures/Fig3_X_vs_auto_regulatory_div.png")
 # figure 4 #
 ############
 
-class.vs.type = read.csv("tables/df.cis_trans.inherit.mat.csv")
+class.vs.type = read.csv("tables/cis_trans_and_expression_inheritance/df.cis_trans.inherit.mat.csv")
 class.vs.type$class = factor(class.vs.type$class, class.levels[ 3:7 ])
 class.vs.type$type = factor(class.vs.type$type, type.levels[ 3:7 ])
-class.vs.type$sex = factor(class.vs.type$sex, sex.levels)
+#class.vs.type$sex = factor(class.vs.type$sex, sex.levels)
 
 f4_1 = ggplot(class.vs.type %>% filter(sex == "female" | sex == "male"), aes(x=class, y=type, fill=n)) +
     geom_tile() +
@@ -395,6 +393,20 @@ f4_2 = ggplot(class.vs.type %>% filter(sex == "(F) hermaphrodite" | sex == "(M) 
         axis.text.y = element_text(size=10),
         #axis.text.x = element_blank())
 		axis.text.x = element_text(angle=90, hjust=1, vjust=0.5, size=10))
+f4_3 = ggplot(class.vs.type %>% filter(sex == "female" | sex == "male"), aes(x=class, y=type, fill=n)) +
+    geom_tile() +
+    xlab("") + ylab("") +
+    scale_fill_viridis(direction=-1, name="number of \ngenes") +
+    facet_rep_grid(sex~chromosome) +
+    # scale_y_discrete(labels=type.legend, limits=type.levels[3:7]) +
+    # scale_x_discrete(labels=class.legend, limits=class.levels[3:7][c(4:5,1:3)]) +
+    theme(strip.background = element_rect(fill="grey90", color=NA),
+        strip.text.y = element_text(size=10),
+        legend.title=element_text(size=10),
+        legend.text =element_text(size=10),
+        axis.text.y = element_text(size=10),
+        #axis.text.x = element_blank())
+		axis.text.x = element_text(angle=90, hjust=1, vjust=0.5, size=10))
 
 grob = as_grob(f4_1)
 grob$grobs[[ which(grob$layout$name %in% "panel-2-6") ]] = nullGrob()
@@ -410,6 +422,13 @@ grob$grobs[[ which(grob$layout$name %in% "axis-b-6-1") ]] = nullGrob()
 grob$layout[ which(grob$layout$name %in% "axis-b-6"), c("t","b")] = grob$layout[ which(grob$layout$name %in% "axis-b-6"), c("t","b")] - 3
 f4_2 = as.ggplot(grob)
 
+grob = as_grob(f4_3)
+grob$grobs[[ which(grob$layout$name %in% "panel-2-6") ]] = nullGrob()
+grob$grobs[[ which(grob$layout$name %in% "axis-l-2-6") ]] = nullGrob()
+grob$grobs[[ which(grob$layout$name %in% "axis-b-6-1") ]] = nullGrob()
+grob$layout[ which(grob$layout$name %in% "axis-b-6"), c("t","b")] = grob$layout[ which(grob$layout$name %in% "axis-b-6"), c("t","b")] - 3
+f4_3 = as.ggplot(grob)
+
 f4_1
 ggsave("figures/Fig3_matrix_class_type_counts.pdf", device="pdf", useDingbats=F)
 ggsave("figures/Fig3_matrix_class_type_counts.png")
@@ -417,6 +436,11 @@ ggsave("figures/Fig3_matrix_class_type_counts.png")
 f4_2
 ggsave("figures/Suppl_Fig_matrix_class_type_counts_herm.pdf", device="pdf", useDingbats=F)
 ggsave("figures/Suppl_Fig_matrix_class_type_counts_herm.png")
+
+f4_3
+ggsave("figures/Suppl_Fig_matrix_class_type_counts_full.pdf", device="pdf", useDingbats=F)
+ggsave("figures/Suppl_Fig_matrix_class_type_counts_full.png")
+
 
 plot_grid(f4_1 + theme(plot.margin = unit(c(0, 0, 0, 0), "cm")),
         f4_2 + theme(plot.margin = unit(c(-.7, 0, 0, 0), "cm")), rel_heights=c(0.5,0.6), nrow=2)

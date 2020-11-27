@@ -12,18 +12,16 @@ library(scales)
 theme_set(theme_cowplot())
 
 # read data
-voomdata = read.csv("voom_log-transformed_exprdata.csv", row.names=1)
-models = read.csv("df.species_sex_class.csv", row.names=1)
-models.short = read.csv("species_sex_models_heatmap.csv")
+rlogdata = read.csv("tables/MDS_plot/rlog-transformed_exprdata.csv", row.names=1)
+models = read.csv("tables/species_by_sex/df.species_sex.csv", row.names=1)
 models.levels = sort(unique(as.character(models$models)))[c(8,5,13,7,4,12,3,11,6,2,10,1,9)]
 
 # get numeric names of models
-models_num = as.character(models.short$models_num)
-names(models_num) = models.short$models
+models_num = as.character(models$models2)
 
 # clean and merge data
-voomdata = voomdata[,c(1:6,13:18)]
-scaledata = t(scale(t(voomdata)))
+rlogdata = rlogdata[,c(1:6,13:18)]
+scaledata = t(scale(t(rlogdata)))
 scaledata = scaledata[rownames(models),]
 scaledata = data.frame(CbrF=rowMeans(scaledata[,1:3]), CbrM=rowMeans(scaledata[,4:6]), CniF=rowMeans(scaledata[,7:9]), CniM=rowMeans(scaledata[,10:12]))
 

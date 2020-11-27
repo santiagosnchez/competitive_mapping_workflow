@@ -6,27 +6,27 @@
 "female","briggsae female-biased interaction","B-F-I","cis-trans (compensatory)",53,0.0453378956372968
 "female","briggsae female-biased interaction","B-F-I","conserved",18,0.0153977758768178
 "female","briggsae female-biased interaction","B-F-I","trans-only",302,0.258340461933276
-"female","briggsae female-biased no_interaction","B-F-N","ambiguous",70,0.053680981595092
-"female","briggsae female-biased no_interaction","B-F-N","cis + trans (enhancing)",236,0.180981595092025
-"female","briggsae female-biased no_interaction","B-F-N","cis x trans (compensatory)",347,0.266104294478528
-"female","briggsae female-biased no_interaction","B-F-N","cis-only",256,0.196319018404908
-"female","briggsae female-biased no_interaction","B-F-N","cis-trans (compensatory)",108,0.0828220858895705
-"female","briggsae female-biased no_interaction","B-F-N","conserved",68,0.0521472392638037
-"female","briggsae female-biased no_interaction","B-F-N","trans-only",219,0.167944785276074
-"female","briggsae male-biased interaction","B-M-I","ambiguous",35,0.0390625
-"female","briggsae male-biased interaction","B-M-I","cis + trans (enhancing)",117,0.130580357142857
-"female","briggsae male-biased interaction","B-M-I","cis x trans (compensatory)",75,0.0837053571428571
-"female","briggsae male-biased interaction","B-M-I","cis-only",66,0.0736607142857143
-"female","briggsae male-biased interaction","B-M-I","cis-trans (compensatory)",12,0.0133928571428571
-"female","briggsae male-biased interaction","B-M-I","conserved",34,0.0379464285714286
-"female","briggsae male-biased interaction","B-M-I","trans-only",557,0.621651785714286
-"female","briggsae male-biased no_interaction","B-M-N","ambiguous",99,0.245049504950495
-"female","briggsae male-biased no_interaction","B-M-N","cis + trans (enhancing)",43,0.106435643564356
-"female","briggsae male-biased no_interaction","B-M-N","cis x trans (compensatory)",34,0.0841584158415842
-"female","briggsae male-biased no_interaction","B-M-N","cis-only",78,0.193069306930693
-"female","briggsae male-biased no_interaction","B-M-N","cis-trans (compensatory)",17,0.0420792079207921
-"female","briggsae male-biased no_interaction","B-M-N","conserved",63,0.155940594059406
-"female","briggsae male-biased no_interaction","B-M-N","trans-only",70,0.173267326732673
+"female","briggsae female-biased no_interaction","B-F-N","ambiguous",70,0.0537221795855718
+"female","briggsae female-biased no_interaction","B-F-N","cis + trans (enhancing)",235,0.180353031465848
+"female","briggsae female-biased no_interaction","B-F-N","cis x trans (compensatory)",347,0.266308518802763
+"female","briggsae female-biased no_interaction","B-F-N","cis-only",256,0.19646968534152
+"female","briggsae female-biased no_interaction","B-F-N","cis-trans (compensatory)",108,0.0828856485034536
+"female","briggsae female-biased no_interaction","B-F-N","conserved",68,0.0521872601688411
+"female","briggsae female-biased no_interaction","B-F-N","trans-only",219,0.168073676132003
+"female","briggsae male-biased interaction","B-M-I","ambiguous",20,0.0743494423791822
+"female","briggsae male-biased interaction","B-M-I","cis + trans (enhancing)",41,0.152416356877323
+"female","briggsae male-biased interaction","B-M-I","cis x trans (compensatory)",21,0.0780669144981413
+"female","briggsae male-biased interaction","B-M-I","cis-only",32,0.118959107806691
+"female","briggsae male-biased interaction","B-M-I","cis-trans (compensatory)",10,0.0371747211895911
+"female","briggsae male-biased interaction","B-M-I","conserved",28,0.104089219330855
+"female","briggsae male-biased interaction","B-M-I","trans-only",117,0.434944237918216
+"female","briggsae male-biased no_interaction","B-M-N","ambiguous",60,0.212765957446809
+"female","briggsae male-biased no_interaction","B-M-N","cis + trans (enhancing)",33,0.117021276595745
+"female","briggsae male-biased no_interaction","B-M-N","cis x trans (compensatory)",17,0.0602836879432624
+"female","briggsae male-biased no_interaction","B-M-N","cis-only",65,0.230496453900709
+"female","briggsae male-biased no_interaction","B-M-N","cis-trans (compensatory)",17,0.0602836879432624
+"female","briggsae male-biased no_interaction","B-M-N","conserved",49,0.173758865248227
+"female","briggsae male-biased no_interaction","B-M-N","trans-only",41,0.145390070921986
 "female","briggsae sex-neutral no_interaction","B-N-N","ambiguous",128,0.144632768361582
 "female","briggsae sex-neutral no_interaction","B-N-N","cis + trans (enhancing)",154,0.174011299435028
 "female","briggsae sex-neutral no_interaction","B-N-N","cis x trans (compensatory)",103,0.11638418079096
@@ -34,27 +34,27 @@
 "female","briggsae sex-neutral no_interaction","B-N-N","cis-trans (compensatory)",47,0.0531073446327684
 "female","briggsae sex-neutral no_interaction","B-N-N","conserved",76,0.0858757062146893
 "female","briggsae sex-neutral no_interaction","B-N-N","trans-only",166,0.187570621468927
-"female","conserved female-biased no_interaction","C-F-N","ambiguous",278,0.281947261663286
-"female","conserved female-biased no_interaction","C-F-N","cis + trans (enhancing)",12,0.0121703853955375
-"female","conserved female-biased no_interaction","C-F-N","cis x trans (compensatory)",13,0.013184584178499
-"female","conserved female-biased no_interaction","C-F-N","cis-only",23,0.0233265720081136
-"female","conserved female-biased no_interaction","C-F-N","cis-trans (compensatory)",418,0.42393509127789
-"female","conserved female-biased no_interaction","C-F-N","conserved",240,0.243407707910751
-"female","conserved female-biased no_interaction","C-F-N","trans-only",2,0.00202839756592292
-"female","conserved male-biased no_interaction","C-M-N","ambiguous",97,0.115065243179122
-"female","conserved male-biased no_interaction","C-M-N","cis + trans (enhancing)",3,0.00355871886120996
-"female","conserved male-biased no_interaction","C-M-N","cis x trans (compensatory)",5,0.00593119810201661
-"female","conserved male-biased no_interaction","C-M-N","cis-only",7,0.00830367734282325
-"female","conserved male-biased no_interaction","C-M-N","cis-trans (compensatory)",175,0.207591933570581
-"female","conserved male-biased no_interaction","C-M-N","conserved",552,0.654804270462633
-"female","conserved male-biased no_interaction","C-M-N","trans-only",4,0.00474495848161329
-"female","conserved sex-neutral no_interaction","C-N-N","ambiguous",358,0.203409090909091
-"female","conserved sex-neutral no_interaction","C-N-N","cis + trans (enhancing)",7,0.00397727272727273
-"female","conserved sex-neutral no_interaction","C-N-N","cis x trans (compensatory)",52,0.0295454545454545
-"female","conserved sex-neutral no_interaction","C-N-N","cis-only",56,0.0318181818181818
-"female","conserved sex-neutral no_interaction","C-N-N","cis-trans (compensatory)",455,0.258522727272727
-"female","conserved sex-neutral no_interaction","C-N-N","conserved",810,0.460227272727273
-"female","conserved sex-neutral no_interaction","C-N-N","trans-only",22,0.0125
+"female","conserved female-biased no_interaction","C-F-N","ambiguous",278,0.281661600810537
+"female","conserved female-biased no_interaction","C-F-N","cis + trans (enhancing)",12,0.0121580547112462
+"female","conserved female-biased no_interaction","C-F-N","cis x trans (compensatory)",13,0.0131712259371834
+"female","conserved female-biased no_interaction","C-F-N","cis-only",23,0.0233029381965552
+"female","conserved female-biased no_interaction","C-F-N","cis-trans (compensatory)",418,0.423505572441743
+"female","conserved female-biased no_interaction","C-F-N","conserved",241,0.244174265450861
+"female","conserved female-biased no_interaction","C-F-N","trans-only",2,0.00202634245187437
+"female","conserved male-biased no_interaction","C-M-N","ambiguous",81,0.11587982832618
+"female","conserved male-biased no_interaction","C-M-N","cis + trans (enhancing)",1,0.00143061516452074
+"female","conserved male-biased no_interaction","C-M-N","cis x trans (compensatory)",3,0.00429184549356223
+"female","conserved male-biased no_interaction","C-M-N","cis-only",3,0.00429184549356223
+"female","conserved male-biased no_interaction","C-M-N","cis-trans (compensatory)",145,0.207439198855508
+"female","conserved male-biased no_interaction","C-M-N","conserved",462,0.660944206008584
+"female","conserved male-biased no_interaction","C-M-N","trans-only",4,0.00572246065808298
+"female","conserved sex-neutral no_interaction","C-N-N","ambiguous",357,0.202956225127914
+"female","conserved sex-neutral no_interaction","C-N-N","cis + trans (enhancing)",7,0.00397953382603752
+"female","conserved sex-neutral no_interaction","C-N-N","cis x trans (compensatory)",54,0.030699260943718
+"female","conserved sex-neutral no_interaction","C-N-N","cis-only",56,0.0318362706083002
+"female","conserved sex-neutral no_interaction","C-N-N","cis-trans (compensatory)",453,0.257532689027857
+"female","conserved sex-neutral no_interaction","C-N-N","conserved",810,0.46048891415577
+"female","conserved sex-neutral no_interaction","C-N-N","trans-only",22,0.0125071063104036
 "female","nigoni female-biased interaction","N-F-I","ambiguous",7,0.0714285714285714
 "female","nigoni female-biased interaction","N-F-I","cis + trans (enhancing)",36,0.36734693877551
 "female","nigoni female-biased interaction","N-F-I","cis x trans (compensatory)",15,0.153061224489796
@@ -66,27 +66,27 @@
 "female","nigoni female-biased no_interaction","N-F-N","cis-only",94,0.383673469387755
 "female","nigoni female-biased no_interaction","N-F-N","conserved",1,0.00408163265306122
 "female","nigoni female-biased no_interaction","N-F-N","trans-only",24,0.0979591836734694
-"female","nigoni male-biased interaction","N-M-I","ambiguous",72,0.0612244897959184
-"female","nigoni male-biased interaction","N-M-I","cis + trans (enhancing)",197,0.167517006802721
-"female","nigoni male-biased interaction","N-M-I","cis x trans (compensatory)",191,0.162414965986395
-"female","nigoni male-biased interaction","N-M-I","cis-only",146,0.124149659863946
-"female","nigoni male-biased interaction","N-M-I","cis-trans (compensatory)",2,0.00170068027210884
-"female","nigoni male-biased interaction","N-M-I","conserved",14,0.0119047619047619
-"female","nigoni male-biased interaction","N-M-I","trans-only",554,0.47108843537415
-"female","nigoni male-biased no_interaction","N-M-N","ambiguous",180,0.174249757986447
-"female","nigoni male-biased no_interaction","N-M-N","cis + trans (enhancing)",89,0.0861568247821878
-"female","nigoni male-biased no_interaction","N-M-N","cis x trans (compensatory)",168,0.162633107454017
-"female","nigoni male-biased no_interaction","N-M-N","cis-only",141,0.13649564375605
-"female","nigoni male-biased no_interaction","N-M-N","cis-trans (compensatory)",6,0.00580832526621491
-"female","nigoni male-biased no_interaction","N-M-N","conserved",42,0.0406582768635044
-"female","nigoni male-biased no_interaction","N-M-N","trans-only",407,0.393998063891578
-"female","nigoni sex-neutral no_interaction","N-N-N","ambiguous",116,0.103386809269162
-"female","nigoni sex-neutral no_interaction","N-N-N","cis + trans (enhancing)",199,0.177361853832442
-"female","nigoni sex-neutral no_interaction","N-N-N","cis x trans (compensatory)",178,0.158645276292335
-"female","nigoni sex-neutral no_interaction","N-N-N","cis-only",312,0.27807486631016
-"female","nigoni sex-neutral no_interaction","N-N-N","cis-trans (compensatory)",8,0.0071301247771836
-"female","nigoni sex-neutral no_interaction","N-N-N","conserved",27,0.0240641711229947
-"female","nigoni sex-neutral no_interaction","N-N-N","trans-only",282,0.251336898395722
+"female","nigoni male-biased interaction","N-M-I","ambiguous",67,0.0630291627469426
+"female","nigoni male-biased interaction","N-M-I","cis + trans (enhancing)",181,0.170272812793979
+"female","nigoni male-biased interaction","N-M-I","cis x trans (compensatory)",168,0.158043273753528
+"female","nigoni male-biased interaction","N-M-I","cis-only",129,0.121354656632173
+"female","nigoni male-biased interaction","N-M-I","cis-trans (compensatory)",2,0.00188146754468485
+"female","nigoni male-biased interaction","N-M-I","conserved",13,0.0122295390404516
+"female","nigoni male-biased interaction","N-M-I","trans-only",503,0.473189087488241
+"female","nigoni male-biased no_interaction","N-M-N","ambiguous",151,0.166299559471366
+"female","nigoni male-biased no_interaction","N-M-N","cis + trans (enhancing)",75,0.0825991189427313
+"female","nigoni male-biased no_interaction","N-M-N","cis x trans (compensatory)",150,0.165198237885463
+"female","nigoni male-biased no_interaction","N-M-N","cis-only",129,0.142070484581498
+"female","nigoni male-biased no_interaction","N-M-N","cis-trans (compensatory)",5,0.00550660792951542
+"female","nigoni male-biased no_interaction","N-M-N","conserved",40,0.0440528634361234
+"female","nigoni male-biased no_interaction","N-M-N","trans-only",358,0.394273127753304
+"female","nigoni sex-neutral no_interaction","N-N-N","ambiguous",116,0.103294746215494
+"female","nigoni sex-neutral no_interaction","N-N-N","cis + trans (enhancing)",199,0.177203918076581
+"female","nigoni sex-neutral no_interaction","N-N-N","cis x trans (compensatory)",178,0.158504007123776
+"female","nigoni sex-neutral no_interaction","N-N-N","cis-only",312,0.277827248441674
+"female","nigoni sex-neutral no_interaction","N-N-N","cis-trans (compensatory)",8,0.00712377560106857
+"female","nigoni sex-neutral no_interaction","N-N-N","conserved",27,0.0240427426536064
+"female","nigoni sex-neutral no_interaction","N-N-N","trans-only",283,0.252003561887801
 "male","briggsae female-biased interaction","B-F-I","ambiguous",270,0.252572497661366
 "male","briggsae female-biased interaction","B-F-I","cis + trans (enhancing)",52,0.048643592142189
 "male","briggsae female-biased interaction","B-F-I","cis x trans (compensatory)",45,0.0420954162768943
@@ -94,27 +94,27 @@
 "male","briggsae female-biased interaction","B-F-I","cis-trans (compensatory)",156,0.145930776426567
 "male","briggsae female-biased interaction","B-F-I","conserved",308,0.288119738072965
 "male","briggsae female-biased interaction","B-F-I","trans-only",118,0.110383536014967
-"male","briggsae female-biased no_interaction","B-F-N","ambiguous",341,0.277010560519903
-"male","briggsae female-biased no_interaction","B-F-N","cis + trans (enhancing)",74,0.0601137286758733
-"male","briggsae female-biased no_interaction","B-F-N","cis x trans (compensatory)",42,0.0341186027619821
-"male","briggsae female-biased no_interaction","B-F-N","cis-only",188,0.15272136474411
-"male","briggsae female-biased no_interaction","B-F-N","cis-trans (compensatory)",99,0.0804224207961007
-"male","briggsae female-biased no_interaction","B-F-N","conserved",371,0.301380991064175
-"male","briggsae female-biased no_interaction","B-F-N","trans-only",116,0.0942323314378554
-"male","briggsae male-biased interaction","B-M-I","ambiguous",199,0.216304347826087
-"male","briggsae male-biased interaction","B-M-I","cis + trans (enhancing)",101,0.109782608695652
-"male","briggsae male-biased interaction","B-M-I","cis x trans (compensatory)",85,0.0923913043478261
-"male","briggsae male-biased interaction","B-M-I","cis-only",202,0.219565217391304
-"male","briggsae male-biased interaction","B-M-I","cis-trans (compensatory)",103,0.11195652173913
-"male","briggsae male-biased interaction","B-M-I","conserved",90,0.0978260869565217
-"male","briggsae male-biased interaction","B-M-I","trans-only",140,0.152173913043478
-"male","briggsae male-biased no_interaction","B-M-N","ambiguous",59,0.152061855670103
-"male","briggsae male-biased no_interaction","B-M-N","cis + trans (enhancing)",62,0.15979381443299
-"male","briggsae male-biased no_interaction","B-M-N","cis x trans (compensatory)",22,0.0567010309278351
-"male","briggsae male-biased no_interaction","B-M-N","cis-only",144,0.371134020618557
-"male","briggsae male-biased no_interaction","B-M-N","cis-trans (compensatory)",16,0.0412371134020619
-"male","briggsae male-biased no_interaction","B-M-N","conserved",27,0.0695876288659794
-"male","briggsae male-biased no_interaction","B-M-N","trans-only",58,0.149484536082474
+"male","briggsae female-biased no_interaction","B-F-N","ambiguous",341,0.277235772357724
+"male","briggsae female-biased no_interaction","B-F-N","cis + trans (enhancing)",74,0.0601626016260163
+"male","briggsae female-biased no_interaction","B-F-N","cis x trans (compensatory)",42,0.0341463414634146
+"male","briggsae female-biased no_interaction","B-F-N","cis-only",188,0.152845528455285
+"male","briggsae female-biased no_interaction","B-F-N","cis-trans (compensatory)",98,0.0796747967479675
+"male","briggsae female-biased no_interaction","B-F-N","conserved",371,0.301626016260163
+"male","briggsae female-biased no_interaction","B-F-N","trans-only",116,0.0943089430894309
+"male","briggsae male-biased interaction","B-M-I","ambiguous",199,0.216069489685125
+"male","briggsae male-biased interaction","B-M-I","cis + trans (enhancing)",101,0.109663409337676
+"male","briggsae male-biased interaction","B-M-I","cis x trans (compensatory)",85,0.0922909880564604
+"male","briggsae male-biased interaction","B-M-I","cis-only",203,0.220412595005429
+"male","briggsae male-biased interaction","B-M-I","cis-trans (compensatory)",103,0.111834961997828
+"male","briggsae male-biased interaction","B-M-I","conserved",90,0.0977198697068404
+"male","briggsae male-biased interaction","B-M-I","trans-only",140,0.152008686210641
+"male","briggsae male-biased no_interaction","B-M-N","ambiguous",59,0.151670951156812
+"male","briggsae male-biased no_interaction","B-M-N","cis + trans (enhancing)",63,0.161953727506427
+"male","briggsae male-biased no_interaction","B-M-N","cis x trans (compensatory)",22,0.0565552699228792
+"male","briggsae male-biased no_interaction","B-M-N","cis-only",144,0.370179948586118
+"male","briggsae male-biased no_interaction","B-M-N","cis-trans (compensatory)",16,0.0411311053984576
+"male","briggsae male-biased no_interaction","B-M-N","conserved",27,0.0694087403598972
+"male","briggsae male-biased no_interaction","B-M-N","trans-only",58,0.149100257069409
 "male","briggsae sex-neutral no_interaction","B-N-N","ambiguous",138,0.176696542893726
 "male","briggsae sex-neutral no_interaction","B-N-N","cis + trans (enhancing)",89,0.113956466069142
 "male","briggsae sex-neutral no_interaction","B-N-N","cis x trans (compensatory)",71,0.0909090909090909
@@ -122,13 +122,13 @@
 "male","briggsae sex-neutral no_interaction","B-N-N","cis-trans (compensatory)",49,0.0627400768245839
 "male","briggsae sex-neutral no_interaction","B-N-N","conserved",127,0.162612035851472
 "male","briggsae sex-neutral no_interaction","B-N-N","trans-only",90,0.115236875800256
-"male","conserved female-biased no_interaction","C-F-N","ambiguous",261,0.282773564463705
-"male","conserved female-biased no_interaction","C-F-N","cis + trans (enhancing)",7,0.0075839653304442
-"male","conserved female-biased no_interaction","C-F-N","cis x trans (compensatory)",17,0.0184182015167931
-"male","conserved female-biased no_interaction","C-F-N","cis-only",70,0.075839653304442
-"male","conserved female-biased no_interaction","C-F-N","cis-trans (compensatory)",123,0.133261105092091
-"male","conserved female-biased no_interaction","C-F-N","conserved",426,0.461538461538462
-"male","conserved female-biased no_interaction","C-F-N","trans-only",19,0.0205850487540628
+"male","conserved female-biased no_interaction","C-F-N","ambiguous",261,0.282467532467532
+"male","conserved female-biased no_interaction","C-F-N","cis + trans (enhancing)",7,0.00757575757575758
+"male","conserved female-biased no_interaction","C-F-N","cis x trans (compensatory)",17,0.0183982683982684
+"male","conserved female-biased no_interaction","C-F-N","cis-only",70,0.0757575757575758
+"male","conserved female-biased no_interaction","C-F-N","cis-trans (compensatory)",124,0.134199134199134
+"male","conserved female-biased no_interaction","C-F-N","conserved",426,0.461038961038961
+"male","conserved female-biased no_interaction","C-F-N","trans-only",19,0.0205627705627706
 "male","conserved male-biased no_interaction","C-M-N","ambiguous",199,0.272976680384088
 "male","conserved male-biased no_interaction","C-M-N","cis + trans (enhancing)",20,0.0274348422496571
 "male","conserved male-biased no_interaction","C-M-N","cis x trans (compensatory)",31,0.0425240054869684
@@ -164,17 +164,17 @@
 "male","nigoni male-biased interaction","N-M-I","cis-trans (compensatory)",95,0.108077360637088
 "male","nigoni male-biased interaction","N-M-I","conserved",175,0.199089874857793
 "male","nigoni male-biased interaction","N-M-I","trans-only",173,0.196814562002275
-"male","nigoni male-biased no_interaction","N-M-N","ambiguous",121,0.157963446475196
-"male","nigoni male-biased no_interaction","N-M-N","cis + trans (enhancing)",58,0.0757180156657963
-"male","nigoni male-biased no_interaction","N-M-N","cis x trans (compensatory)",123,0.160574412532637
-"male","nigoni male-biased no_interaction","N-M-N","cis-only",114,0.148825065274151
-"male","nigoni male-biased no_interaction","N-M-N","cis-trans (compensatory)",48,0.0626631853785901
-"male","nigoni male-biased no_interaction","N-M-N","conserved",87,0.113577023498695
-"male","nigoni male-biased no_interaction","N-M-N","trans-only",215,0.280678851174935
-"male","nigoni sex-neutral no_interaction","N-N-N","ambiguous",121,0.142185663924794
-"male","nigoni sex-neutral no_interaction","N-N-N","cis + trans (enhancing)",72,0.0846063454759107
-"male","nigoni sex-neutral no_interaction","N-N-N","cis x trans (compensatory)",84,0.0987074030552291
-"male","nigoni sex-neutral no_interaction","N-N-N","cis-only",273,0.320799059929495
-"male","nigoni sex-neutral no_interaction","N-N-N","cis-trans (compensatory)",48,0.0564042303172738
-"male","nigoni sex-neutral no_interaction","N-N-N","conserved",99,0.116333725029377
-"male","nigoni sex-neutral no_interaction","N-N-N","trans-only",154,0.18096357226792
+"male","nigoni male-biased no_interaction","N-M-N","ambiguous",120,0.156862745098039
+"male","nigoni male-biased no_interaction","N-M-N","cis + trans (enhancing)",58,0.0758169934640523
+"male","nigoni male-biased no_interaction","N-M-N","cis x trans (compensatory)",123,0.16078431372549
+"male","nigoni male-biased no_interaction","N-M-N","cis-only",115,0.150326797385621
+"male","nigoni male-biased no_interaction","N-M-N","cis-trans (compensatory)",48,0.0627450980392157
+"male","nigoni male-biased no_interaction","N-M-N","conserved",87,0.113725490196078
+"male","nigoni male-biased no_interaction","N-M-N","trans-only",214,0.279738562091503
+"male","nigoni sex-neutral no_interaction","N-N-N","ambiguous",121,0.142018779342723
+"male","nigoni sex-neutral no_interaction","N-N-N","cis + trans (enhancing)",72,0.0845070422535211
+"male","nigoni sex-neutral no_interaction","N-N-N","cis x trans (compensatory)",84,0.0985915492957746
+"male","nigoni sex-neutral no_interaction","N-N-N","cis-only",273,0.320422535211268
+"male","nigoni sex-neutral no_interaction","N-N-N","cis-trans (compensatory)",48,0.0563380281690141
+"male","nigoni sex-neutral no_interaction","N-N-N","conserved",99,0.116197183098592
+"male","nigoni sex-neutral no_interaction","N-N-N","trans-only",155,0.181924882629108

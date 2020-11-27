@@ -1,154 +1,10 @@
 "sex","class","type","chromosome","n"
-"(F) hermaphrodite","additive","cis + trans (enhancing)","I",11
-"(F) hermaphrodite","additive","cis + trans (enhancing)","II",6
-"(F) hermaphrodite","additive","cis + trans (enhancing)","III",12
-"(F) hermaphrodite","additive","cis + trans (enhancing)","IV",5
-"(F) hermaphrodite","additive","cis + trans (enhancing)","V",5
-"(F) hermaphrodite","additive","cis + trans (enhancing)","X",4
-"(F) hermaphrodite","additive","cis x trans (compensatory)","I",3
-"(F) hermaphrodite","additive","cis x trans (compensatory)","II",5
-"(F) hermaphrodite","additive","cis x trans (compensatory)","III",3
-"(F) hermaphrodite","additive","cis x trans (compensatory)","IV",4
-"(F) hermaphrodite","additive","cis x trans (compensatory)","V",2
-"(F) hermaphrodite","additive","cis x trans (compensatory)","X",0
-"(F) hermaphrodite","additive","cis-only","I",3
-"(F) hermaphrodite","additive","cis-only","II",0
-"(F) hermaphrodite","additive","cis-only","III",3
-"(F) hermaphrodite","additive","cis-only","IV",4
-"(F) hermaphrodite","additive","cis-only","V",2
-"(F) hermaphrodite","additive","cis-only","X",0
-"(F) hermaphrodite","additive","cis-trans (compensatory)","I",0
-"(F) hermaphrodite","additive","cis-trans (compensatory)","II",0
-"(F) hermaphrodite","additive","cis-trans (compensatory)","III",0
-"(F) hermaphrodite","additive","cis-trans (compensatory)","IV",0
-"(F) hermaphrodite","additive","cis-trans (compensatory)","V",0
-"(F) hermaphrodite","additive","cis-trans (compensatory)","X",0
-"(F) hermaphrodite","additive","trans-only","I",14
-"(F) hermaphrodite","additive","trans-only","II",4
-"(F) hermaphrodite","additive","trans-only","III",9
-"(F) hermaphrodite","additive","trans-only","IV",5
-"(F) hermaphrodite","additive","trans-only","V",3
-"(F) hermaphrodite","additive","trans-only","X",3
-"(F) hermaphrodite","C. briggsae dominant","cis + trans (enhancing)","I",1
-"(F) hermaphrodite","C. briggsae dominant","cis + trans (enhancing)","II",2
-"(F) hermaphrodite","C. briggsae dominant","cis + trans (enhancing)","III",2
-"(F) hermaphrodite","C. briggsae dominant","cis + trans (enhancing)","IV",2
-"(F) hermaphrodite","C. briggsae dominant","cis + trans (enhancing)","V",2
-"(F) hermaphrodite","C. briggsae dominant","cis + trans (enhancing)","X",5
-"(F) hermaphrodite","C. briggsae dominant","cis x trans (compensatory)","I",5
-"(F) hermaphrodite","C. briggsae dominant","cis x trans (compensatory)","II",5
-"(F) hermaphrodite","C. briggsae dominant","cis x trans (compensatory)","III",2
-"(F) hermaphrodite","C. briggsae dominant","cis x trans (compensatory)","IV",3
-"(F) hermaphrodite","C. briggsae dominant","cis x trans (compensatory)","V",4
-"(F) hermaphrodite","C. briggsae dominant","cis x trans (compensatory)","X",2
-"(F) hermaphrodite","C. briggsae dominant","cis-only","I",2
-"(F) hermaphrodite","C. briggsae dominant","cis-only","II",3
-"(F) hermaphrodite","C. briggsae dominant","cis-only","III",2
-"(F) hermaphrodite","C. briggsae dominant","cis-only","IV",5
-"(F) hermaphrodite","C. briggsae dominant","cis-only","V",3
-"(F) hermaphrodite","C. briggsae dominant","cis-only","X",3
-"(F) hermaphrodite","C. briggsae dominant","cis-trans (compensatory)","I",0
-"(F) hermaphrodite","C. briggsae dominant","cis-trans (compensatory)","II",0
-"(F) hermaphrodite","C. briggsae dominant","cis-trans (compensatory)","III",0
-"(F) hermaphrodite","C. briggsae dominant","cis-trans (compensatory)","IV",0
-"(F) hermaphrodite","C. briggsae dominant","cis-trans (compensatory)","V",0
-"(F) hermaphrodite","C. briggsae dominant","cis-trans (compensatory)","X",0
-"(F) hermaphrodite","C. briggsae dominant","trans-only","I",4
-"(F) hermaphrodite","C. briggsae dominant","trans-only","II",6
-"(F) hermaphrodite","C. briggsae dominant","trans-only","III",10
-"(F) hermaphrodite","C. briggsae dominant","trans-only","IV",6
-"(F) hermaphrodite","C. briggsae dominant","trans-only","V",4
-"(F) hermaphrodite","C. briggsae dominant","trans-only","X",5
-"(F) hermaphrodite","C. nigoni dominant","cis + trans (enhancing)","I",17
-"(F) hermaphrodite","C. nigoni dominant","cis + trans (enhancing)","II",10
-"(F) hermaphrodite","C. nigoni dominant","cis + trans (enhancing)","III",6
-"(F) hermaphrodite","C. nigoni dominant","cis + trans (enhancing)","IV",4
-"(F) hermaphrodite","C. nigoni dominant","cis + trans (enhancing)","V",3
-"(F) hermaphrodite","C. nigoni dominant","cis + trans (enhancing)","X",1
-"(F) hermaphrodite","C. nigoni dominant","cis x trans (compensatory)","I",11
-"(F) hermaphrodite","C. nigoni dominant","cis x trans (compensatory)","II",7
-"(F) hermaphrodite","C. nigoni dominant","cis x trans (compensatory)","III",5
-"(F) hermaphrodite","C. nigoni dominant","cis x trans (compensatory)","IV",9
-"(F) hermaphrodite","C. nigoni dominant","cis x trans (compensatory)","V",2
-"(F) hermaphrodite","C. nigoni dominant","cis x trans (compensatory)","X",1
-"(F) hermaphrodite","C. nigoni dominant","cis-only","I",5
-"(F) hermaphrodite","C. nigoni dominant","cis-only","II",4
-"(F) hermaphrodite","C. nigoni dominant","cis-only","III",5
-"(F) hermaphrodite","C. nigoni dominant","cis-only","IV",1
-"(F) hermaphrodite","C. nigoni dominant","cis-only","V",5
-"(F) hermaphrodite","C. nigoni dominant","cis-only","X",1
-"(F) hermaphrodite","C. nigoni dominant","cis-trans (compensatory)","I",0
-"(F) hermaphrodite","C. nigoni dominant","cis-trans (compensatory)","II",0
-"(F) hermaphrodite","C. nigoni dominant","cis-trans (compensatory)","III",0
-"(F) hermaphrodite","C. nigoni dominant","cis-trans (compensatory)","IV",0
-"(F) hermaphrodite","C. nigoni dominant","cis-trans (compensatory)","V",0
-"(F) hermaphrodite","C. nigoni dominant","cis-trans (compensatory)","X",0
-"(F) hermaphrodite","C. nigoni dominant","trans-only","I",99
-"(F) hermaphrodite","C. nigoni dominant","trans-only","II",71
-"(F) hermaphrodite","C. nigoni dominant","trans-only","III",76
-"(F) hermaphrodite","C. nigoni dominant","trans-only","IV",49
-"(F) hermaphrodite","C. nigoni dominant","trans-only","V",53
-"(F) hermaphrodite","C. nigoni dominant","trans-only","X",3
-"(F) hermaphrodite","overdominant","cis + trans (enhancing)","I",0
-"(F) hermaphrodite","overdominant","cis + trans (enhancing)","II",1
-"(F) hermaphrodite","overdominant","cis + trans (enhancing)","III",0
-"(F) hermaphrodite","overdominant","cis + trans (enhancing)","IV",0
-"(F) hermaphrodite","overdominant","cis + trans (enhancing)","V",1
-"(F) hermaphrodite","overdominant","cis + trans (enhancing)","X",0
-"(F) hermaphrodite","overdominant","cis x trans (compensatory)","I",2
-"(F) hermaphrodite","overdominant","cis x trans (compensatory)","II",2
-"(F) hermaphrodite","overdominant","cis x trans (compensatory)","III",2
-"(F) hermaphrodite","overdominant","cis x trans (compensatory)","IV",2
-"(F) hermaphrodite","overdominant","cis x trans (compensatory)","V",2
-"(F) hermaphrodite","overdominant","cis x trans (compensatory)","X",0
-"(F) hermaphrodite","overdominant","cis-only","I",1
-"(F) hermaphrodite","overdominant","cis-only","II",2
-"(F) hermaphrodite","overdominant","cis-only","III",1
-"(F) hermaphrodite","overdominant","cis-only","IV",1
-"(F) hermaphrodite","overdominant","cis-only","V",1
-"(F) hermaphrodite","overdominant","cis-only","X",0
-"(F) hermaphrodite","overdominant","cis-trans (compensatory)","I",2
-"(F) hermaphrodite","overdominant","cis-trans (compensatory)","II",1
-"(F) hermaphrodite","overdominant","cis-trans (compensatory)","III",0
-"(F) hermaphrodite","overdominant","cis-trans (compensatory)","IV",1
-"(F) hermaphrodite","overdominant","cis-trans (compensatory)","V",1
-"(F) hermaphrodite","overdominant","cis-trans (compensatory)","X",0
-"(F) hermaphrodite","overdominant","trans-only","I",0
-"(F) hermaphrodite","overdominant","trans-only","II",1
-"(F) hermaphrodite","overdominant","trans-only","III",0
-"(F) hermaphrodite","overdominant","trans-only","IV",1
-"(F) hermaphrodite","overdominant","trans-only","V",0
-"(F) hermaphrodite","overdominant","trans-only","X",0
-"(F) hermaphrodite","underdominant","cis + trans (enhancing)","I",2
-"(F) hermaphrodite","underdominant","cis + trans (enhancing)","II",5
-"(F) hermaphrodite","underdominant","cis + trans (enhancing)","III",2
-"(F) hermaphrodite","underdominant","cis + trans (enhancing)","IV",2
-"(F) hermaphrodite","underdominant","cis + trans (enhancing)","V",3
-"(F) hermaphrodite","underdominant","cis + trans (enhancing)","X",3
-"(F) hermaphrodite","underdominant","cis x trans (compensatory)","I",9
-"(F) hermaphrodite","underdominant","cis x trans (compensatory)","II",6
-"(F) hermaphrodite","underdominant","cis x trans (compensatory)","III",2
-"(F) hermaphrodite","underdominant","cis x trans (compensatory)","IV",4
-"(F) hermaphrodite","underdominant","cis x trans (compensatory)","V",4
-"(F) hermaphrodite","underdominant","cis x trans (compensatory)","X",3
-"(F) hermaphrodite","underdominant","cis-only","I",7
-"(F) hermaphrodite","underdominant","cis-only","II",1
-"(F) hermaphrodite","underdominant","cis-only","III",6
-"(F) hermaphrodite","underdominant","cis-only","IV",4
-"(F) hermaphrodite","underdominant","cis-only","V",4
-"(F) hermaphrodite","underdominant","cis-only","X",2
-"(F) hermaphrodite","underdominant","cis-trans (compensatory)","I",6
-"(F) hermaphrodite","underdominant","cis-trans (compensatory)","II",5
-"(F) hermaphrodite","underdominant","cis-trans (compensatory)","III",7
-"(F) hermaphrodite","underdominant","cis-trans (compensatory)","IV",4
-"(F) hermaphrodite","underdominant","cis-trans (compensatory)","V",8
-"(F) hermaphrodite","underdominant","cis-trans (compensatory)","X",2
-"(F) hermaphrodite","underdominant","trans-only","I",27
-"(F) hermaphrodite","underdominant","trans-only","II",29
-"(F) hermaphrodite","underdominant","trans-only","III",22
-"(F) hermaphrodite","underdominant","trans-only","IV",32
-"(F) hermaphrodite","underdominant","trans-only","V",21
-"(F) hermaphrodite","underdominant","trans-only","X",14
+"(M) hermaphrodite","additive","ambiguous","I",1
+"(M) hermaphrodite","additive","ambiguous","II",0
+"(M) hermaphrodite","additive","ambiguous","III",0
+"(M) hermaphrodite","additive","ambiguous","IV",0
+"(M) hermaphrodite","additive","ambiguous","V",0
+"(M) hermaphrodite","additive","ambiguous","X",0
 "(M) hermaphrodite","additive","cis + trans (enhancing)","I",8
 "(M) hermaphrodite","additive","cis + trans (enhancing)","II",6
 "(M) hermaphrodite","additive","cis + trans (enhancing)","III",9
@@ -173,12 +29,66 @@
 "(M) hermaphrodite","additive","cis-trans (compensatory)","IV",0
 "(M) hermaphrodite","additive","cis-trans (compensatory)","V",0
 "(M) hermaphrodite","additive","cis-trans (compensatory)","X",0
+"(M) hermaphrodite","additive","conserved","I",0
+"(M) hermaphrodite","additive","conserved","II",0
+"(M) hermaphrodite","additive","conserved","III",0
+"(M) hermaphrodite","additive","conserved","IV",0
+"(M) hermaphrodite","additive","conserved","V",0
+"(M) hermaphrodite","additive","conserved","X",0
 "(M) hermaphrodite","additive","trans-only","I",4
 "(M) hermaphrodite","additive","trans-only","II",9
 "(M) hermaphrodite","additive","trans-only","III",5
 "(M) hermaphrodite","additive","trans-only","IV",2
 "(M) hermaphrodite","additive","trans-only","V",1
 "(M) hermaphrodite","additive","trans-only","X",0
+"(M) hermaphrodite","ambiguous","ambiguous","I",9
+"(M) hermaphrodite","ambiguous","ambiguous","II",12
+"(M) hermaphrodite","ambiguous","ambiguous","III",10
+"(M) hermaphrodite","ambiguous","ambiguous","IV",9
+"(M) hermaphrodite","ambiguous","ambiguous","V",7
+"(M) hermaphrodite","ambiguous","ambiguous","X",0
+"(M) hermaphrodite","ambiguous","cis + trans (enhancing)","I",0
+"(M) hermaphrodite","ambiguous","cis + trans (enhancing)","II",0
+"(M) hermaphrodite","ambiguous","cis + trans (enhancing)","III",1
+"(M) hermaphrodite","ambiguous","cis + trans (enhancing)","IV",0
+"(M) hermaphrodite","ambiguous","cis + trans (enhancing)","V",0
+"(M) hermaphrodite","ambiguous","cis + trans (enhancing)","X",0
+"(M) hermaphrodite","ambiguous","cis x trans (compensatory)","I",4
+"(M) hermaphrodite","ambiguous","cis x trans (compensatory)","II",1
+"(M) hermaphrodite","ambiguous","cis x trans (compensatory)","III",0
+"(M) hermaphrodite","ambiguous","cis x trans (compensatory)","IV",0
+"(M) hermaphrodite","ambiguous","cis x trans (compensatory)","V",0
+"(M) hermaphrodite","ambiguous","cis x trans (compensatory)","X",0
+"(M) hermaphrodite","ambiguous","cis-only","I",0
+"(M) hermaphrodite","ambiguous","cis-only","II",0
+"(M) hermaphrodite","ambiguous","cis-only","III",0
+"(M) hermaphrodite","ambiguous","cis-only","IV",0
+"(M) hermaphrodite","ambiguous","cis-only","V",0
+"(M) hermaphrodite","ambiguous","cis-only","X",0
+"(M) hermaphrodite","ambiguous","cis-trans (compensatory)","I",14
+"(M) hermaphrodite","ambiguous","cis-trans (compensatory)","II",4
+"(M) hermaphrodite","ambiguous","cis-trans (compensatory)","III",10
+"(M) hermaphrodite","ambiguous","cis-trans (compensatory)","IV",10
+"(M) hermaphrodite","ambiguous","cis-trans (compensatory)","V",3
+"(M) hermaphrodite","ambiguous","cis-trans (compensatory)","X",0
+"(M) hermaphrodite","ambiguous","conserved","I",14
+"(M) hermaphrodite","ambiguous","conserved","II",10
+"(M) hermaphrodite","ambiguous","conserved","III",13
+"(M) hermaphrodite","ambiguous","conserved","IV",15
+"(M) hermaphrodite","ambiguous","conserved","V",11
+"(M) hermaphrodite","ambiguous","conserved","X",0
+"(M) hermaphrodite","ambiguous","trans-only","I",1
+"(M) hermaphrodite","ambiguous","trans-only","II",0
+"(M) hermaphrodite","ambiguous","trans-only","III",0
+"(M) hermaphrodite","ambiguous","trans-only","IV",1
+"(M) hermaphrodite","ambiguous","trans-only","V",1
+"(M) hermaphrodite","ambiguous","trans-only","X",0
+"(M) hermaphrodite","C. briggsae dominant","ambiguous","I",2
+"(M) hermaphrodite","C. briggsae dominant","ambiguous","II",2
+"(M) hermaphrodite","C. briggsae dominant","ambiguous","III",0
+"(M) hermaphrodite","C. briggsae dominant","ambiguous","IV",0
+"(M) hermaphrodite","C. briggsae dominant","ambiguous","V",4
+"(M) hermaphrodite","C. briggsae dominant","ambiguous","X",0
 "(M) hermaphrodite","C. briggsae dominant","cis + trans (enhancing)","I",1
 "(M) hermaphrodite","C. briggsae dominant","cis + trans (enhancing)","II",2
 "(M) hermaphrodite","C. briggsae dominant","cis + trans (enhancing)","III",2
@@ -191,7 +101,7 @@
 "(M) hermaphrodite","C. briggsae dominant","cis x trans (compensatory)","IV",3
 "(M) hermaphrodite","C. briggsae dominant","cis x trans (compensatory)","V",4
 "(M) hermaphrodite","C. briggsae dominant","cis x trans (compensatory)","X",0
-"(M) hermaphrodite","C. briggsae dominant","cis-only","I",5
+"(M) hermaphrodite","C. briggsae dominant","cis-only","I",6
 "(M) hermaphrodite","C. briggsae dominant","cis-only","II",5
 "(M) hermaphrodite","C. briggsae dominant","cis-only","III",2
 "(M) hermaphrodite","C. briggsae dominant","cis-only","IV",5
@@ -203,12 +113,24 @@
 "(M) hermaphrodite","C. briggsae dominant","cis-trans (compensatory)","IV",0
 "(M) hermaphrodite","C. briggsae dominant","cis-trans (compensatory)","V",0
 "(M) hermaphrodite","C. briggsae dominant","cis-trans (compensatory)","X",0
+"(M) hermaphrodite","C. briggsae dominant","conserved","I",0
+"(M) hermaphrodite","C. briggsae dominant","conserved","II",0
+"(M) hermaphrodite","C. briggsae dominant","conserved","III",0
+"(M) hermaphrodite","C. briggsae dominant","conserved","IV",0
+"(M) hermaphrodite","C. briggsae dominant","conserved","V",0
+"(M) hermaphrodite","C. briggsae dominant","conserved","X",0
 "(M) hermaphrodite","C. briggsae dominant","trans-only","I",1
 "(M) hermaphrodite","C. briggsae dominant","trans-only","II",8
 "(M) hermaphrodite","C. briggsae dominant","trans-only","III",3
 "(M) hermaphrodite","C. briggsae dominant","trans-only","IV",11
 "(M) hermaphrodite","C. briggsae dominant","trans-only","V",4
 "(M) hermaphrodite","C. briggsae dominant","trans-only","X",0
+"(M) hermaphrodite","C. nigoni dominant","ambiguous","I",31
+"(M) hermaphrodite","C. nigoni dominant","ambiguous","II",14
+"(M) hermaphrodite","C. nigoni dominant","ambiguous","III",23
+"(M) hermaphrodite","C. nigoni dominant","ambiguous","IV",10
+"(M) hermaphrodite","C. nigoni dominant","ambiguous","V",22
+"(M) hermaphrodite","C. nigoni dominant","ambiguous","X",0
 "(M) hermaphrodite","C. nigoni dominant","cis + trans (enhancing)","I",5
 "(M) hermaphrodite","C. nigoni dominant","cis + trans (enhancing)","II",2
 "(M) hermaphrodite","C. nigoni dominant","cis + trans (enhancing)","III",5
@@ -233,12 +155,66 @@
 "(M) hermaphrodite","C. nigoni dominant","cis-trans (compensatory)","IV",0
 "(M) hermaphrodite","C. nigoni dominant","cis-trans (compensatory)","V",0
 "(M) hermaphrodite","C. nigoni dominant","cis-trans (compensatory)","X",0
+"(M) hermaphrodite","C. nigoni dominant","conserved","I",0
+"(M) hermaphrodite","C. nigoni dominant","conserved","II",0
+"(M) hermaphrodite","C. nigoni dominant","conserved","III",0
+"(M) hermaphrodite","C. nigoni dominant","conserved","IV",0
+"(M) hermaphrodite","C. nigoni dominant","conserved","V",0
+"(M) hermaphrodite","C. nigoni dominant","conserved","X",0
 "(M) hermaphrodite","C. nigoni dominant","trans-only","I",22
 "(M) hermaphrodite","C. nigoni dominant","trans-only","II",27
 "(M) hermaphrodite","C. nigoni dominant","trans-only","III",21
 "(M) hermaphrodite","C. nigoni dominant","trans-only","IV",18
 "(M) hermaphrodite","C. nigoni dominant","trans-only","V",12
 "(M) hermaphrodite","C. nigoni dominant","trans-only","X",0
+"(M) hermaphrodite","no change","ambiguous","I",11
+"(M) hermaphrodite","no change","ambiguous","II",13
+"(M) hermaphrodite","no change","ambiguous","III",6
+"(M) hermaphrodite","no change","ambiguous","IV",2
+"(M) hermaphrodite","no change","ambiguous","V",9
+"(M) hermaphrodite","no change","ambiguous","X",0
+"(M) hermaphrodite","no change","cis + trans (enhancing)","I",0
+"(M) hermaphrodite","no change","cis + trans (enhancing)","II",0
+"(M) hermaphrodite","no change","cis + trans (enhancing)","III",0
+"(M) hermaphrodite","no change","cis + trans (enhancing)","IV",0
+"(M) hermaphrodite","no change","cis + trans (enhancing)","V",0
+"(M) hermaphrodite","no change","cis + trans (enhancing)","X",0
+"(M) hermaphrodite","no change","cis x trans (compensatory)","I",0
+"(M) hermaphrodite","no change","cis x trans (compensatory)","II",0
+"(M) hermaphrodite","no change","cis x trans (compensatory)","III",0
+"(M) hermaphrodite","no change","cis x trans (compensatory)","IV",0
+"(M) hermaphrodite","no change","cis x trans (compensatory)","V",0
+"(M) hermaphrodite","no change","cis x trans (compensatory)","X",0
+"(M) hermaphrodite","no change","cis-only","I",0
+"(M) hermaphrodite","no change","cis-only","II",0
+"(M) hermaphrodite","no change","cis-only","III",0
+"(M) hermaphrodite","no change","cis-only","IV",0
+"(M) hermaphrodite","no change","cis-only","V",0
+"(M) hermaphrodite","no change","cis-only","X",0
+"(M) hermaphrodite","no change","cis-trans (compensatory)","I",12
+"(M) hermaphrodite","no change","cis-trans (compensatory)","II",6
+"(M) hermaphrodite","no change","cis-trans (compensatory)","III",12
+"(M) hermaphrodite","no change","cis-trans (compensatory)","IV",9
+"(M) hermaphrodite","no change","cis-trans (compensatory)","V",7
+"(M) hermaphrodite","no change","cis-trans (compensatory)","X",0
+"(M) hermaphrodite","no change","conserved","I",14
+"(M) hermaphrodite","no change","conserved","II",14
+"(M) hermaphrodite","no change","conserved","III",10
+"(M) hermaphrodite","no change","conserved","IV",15
+"(M) hermaphrodite","no change","conserved","V",15
+"(M) hermaphrodite","no change","conserved","X",0
+"(M) hermaphrodite","no change","trans-only","I",0
+"(M) hermaphrodite","no change","trans-only","II",0
+"(M) hermaphrodite","no change","trans-only","III",0
+"(M) hermaphrodite","no change","trans-only","IV",0
+"(M) hermaphrodite","no change","trans-only","V",0
+"(M) hermaphrodite","no change","trans-only","X",0
+"(M) hermaphrodite","overdominant","ambiguous","I",5
+"(M) hermaphrodite","overdominant","ambiguous","II",4
+"(M) hermaphrodite","overdominant","ambiguous","III",2
+"(M) hermaphrodite","overdominant","ambiguous","IV",4
+"(M) hermaphrodite","overdominant","ambiguous","V",3
+"(M) hermaphrodite","overdominant","ambiguous","X",0
 "(M) hermaphrodite","overdominant","cis + trans (enhancing)","I",0
 "(M) hermaphrodite","overdominant","cis + trans (enhancing)","II",0
 "(M) hermaphrodite","overdominant","cis + trans (enhancing)","III",0
@@ -263,12 +239,24 @@
 "(M) hermaphrodite","overdominant","cis-trans (compensatory)","IV",2
 "(M) hermaphrodite","overdominant","cis-trans (compensatory)","V",3
 "(M) hermaphrodite","overdominant","cis-trans (compensatory)","X",0
+"(M) hermaphrodite","overdominant","conserved","I",3
+"(M) hermaphrodite","overdominant","conserved","II",4
+"(M) hermaphrodite","overdominant","conserved","III",2
+"(M) hermaphrodite","overdominant","conserved","IV",1
+"(M) hermaphrodite","overdominant","conserved","V",2
+"(M) hermaphrodite","overdominant","conserved","X",0
 "(M) hermaphrodite","overdominant","trans-only","I",1
 "(M) hermaphrodite","overdominant","trans-only","II",2
 "(M) hermaphrodite","overdominant","trans-only","III",0
 "(M) hermaphrodite","overdominant","trans-only","IV",1
 "(M) hermaphrodite","overdominant","trans-only","V",1
 "(M) hermaphrodite","overdominant","trans-only","X",0
+"(M) hermaphrodite","underdominant","ambiguous","I",7
+"(M) hermaphrodite","underdominant","ambiguous","II",7
+"(M) hermaphrodite","underdominant","ambiguous","III",3
+"(M) hermaphrodite","underdominant","ambiguous","IV",9
+"(M) hermaphrodite","underdominant","ambiguous","V",1
+"(M) hermaphrodite","underdominant","ambiguous","X",0
 "(M) hermaphrodite","underdominant","cis + trans (enhancing)","I",4
 "(M) hermaphrodite","underdominant","cis + trans (enhancing)","II",2
 "(M) hermaphrodite","underdominant","cis + trans (enhancing)","III",1
@@ -293,12 +281,24 @@
 "(M) hermaphrodite","underdominant","cis-trans (compensatory)","IV",5
 "(M) hermaphrodite","underdominant","cis-trans (compensatory)","V",10
 "(M) hermaphrodite","underdominant","cis-trans (compensatory)","X",0
+"(M) hermaphrodite","underdominant","conserved","I",10
+"(M) hermaphrodite","underdominant","conserved","II",6
+"(M) hermaphrodite","underdominant","conserved","III",1
+"(M) hermaphrodite","underdominant","conserved","IV",5
+"(M) hermaphrodite","underdominant","conserved","V",7
+"(M) hermaphrodite","underdominant","conserved","X",0
 "(M) hermaphrodite","underdominant","trans-only","I",1
 "(M) hermaphrodite","underdominant","trans-only","II",3
 "(M) hermaphrodite","underdominant","trans-only","III",4
 "(M) hermaphrodite","underdominant","trans-only","IV",8
 "(M) hermaphrodite","underdominant","trans-only","V",4
 "(M) hermaphrodite","underdominant","trans-only","X",0
+"female","additive","ambiguous","I",0
+"female","additive","ambiguous","II",0
+"female","additive","ambiguous","III",1
+"female","additive","ambiguous","IV",1
+"female","additive","ambiguous","V",1
+"female","additive","ambiguous","X",0
 "female","additive","cis + trans (enhancing)","I",34
 "female","additive","cis + trans (enhancing)","II",33
 "female","additive","cis + trans (enhancing)","III",31
@@ -323,17 +323,71 @@
 "female","additive","cis-trans (compensatory)","IV",0
 "female","additive","cis-trans (compensatory)","V",0
 "female","additive","cis-trans (compensatory)","X",0
+"female","additive","conserved","I",0
+"female","additive","conserved","II",0
+"female","additive","conserved","III",0
+"female","additive","conserved","IV",0
+"female","additive","conserved","V",0
+"female","additive","conserved","X",0
 "female","additive","trans-only","I",16
 "female","additive","trans-only","II",17
 "female","additive","trans-only","III",22
 "female","additive","trans-only","IV",22
 "female","additive","trans-only","V",32
 "female","additive","trans-only","X",33
+"female","ambiguous","ambiguous","I",15
+"female","ambiguous","ambiguous","II",17
+"female","ambiguous","ambiguous","III",18
+"female","ambiguous","ambiguous","IV",31
+"female","ambiguous","ambiguous","V",36
+"female","ambiguous","ambiguous","X",29
+"female","ambiguous","cis + trans (enhancing)","I",1
+"female","ambiguous","cis + trans (enhancing)","II",1
+"female","ambiguous","cis + trans (enhancing)","III",1
+"female","ambiguous","cis + trans (enhancing)","IV",1
+"female","ambiguous","cis + trans (enhancing)","V",0
+"female","ambiguous","cis + trans (enhancing)","X",0
+"female","ambiguous","cis x trans (compensatory)","I",3
+"female","ambiguous","cis x trans (compensatory)","II",3
+"female","ambiguous","cis x trans (compensatory)","III",2
+"female","ambiguous","cis x trans (compensatory)","IV",4
+"female","ambiguous","cis x trans (compensatory)","V",3
+"female","ambiguous","cis x trans (compensatory)","X",2
+"female","ambiguous","cis-only","I",2
+"female","ambiguous","cis-only","II",6
+"female","ambiguous","cis-only","III",3
+"female","ambiguous","cis-only","IV",6
+"female","ambiguous","cis-only","V",5
+"female","ambiguous","cis-only","X",9
+"female","ambiguous","cis-trans (compensatory)","I",24
+"female","ambiguous","cis-trans (compensatory)","II",28
+"female","ambiguous","cis-trans (compensatory)","III",31
+"female","ambiguous","cis-trans (compensatory)","IV",35
+"female","ambiguous","cis-trans (compensatory)","V",29
+"female","ambiguous","cis-trans (compensatory)","X",33
+"female","ambiguous","conserved","I",43
+"female","ambiguous","conserved","II",54
+"female","ambiguous","conserved","III",45
+"female","ambiguous","conserved","IV",49
+"female","ambiguous","conserved","V",95
+"female","ambiguous","conserved","X",119
+"female","ambiguous","trans-only","I",3
+"female","ambiguous","trans-only","II",9
+"female","ambiguous","trans-only","III",5
+"female","ambiguous","trans-only","IV",6
+"female","ambiguous","trans-only","V",10
+"female","ambiguous","trans-only","X",6
+"female","C. briggsae dominant","ambiguous","I",16
+"female","C. briggsae dominant","ambiguous","II",26
+"female","C. briggsae dominant","ambiguous","III",18
+"female","C. briggsae dominant","ambiguous","IV",27
+"female","C. briggsae dominant","ambiguous","V",47
+"female","C. briggsae dominant","ambiguous","X",55
 "female","C. briggsae dominant","cis + trans (enhancing)","I",42
 "female","C. briggsae dominant","cis + trans (enhancing)","II",40
 "female","C. briggsae dominant","cis + trans (enhancing)","III",34
 "female","C. briggsae dominant","cis + trans (enhancing)","IV",40
-"female","C. briggsae dominant","cis + trans (enhancing)","V",41
+"female","C. briggsae dominant","cis + trans (enhancing)","V",42
 "female","C. briggsae dominant","cis + trans (enhancing)","X",68
 "female","C. briggsae dominant","cis x trans (compensatory)","I",55
 "female","C. briggsae dominant","cis x trans (compensatory)","II",63
@@ -353,12 +407,24 @@
 "female","C. briggsae dominant","cis-trans (compensatory)","IV",0
 "female","C. briggsae dominant","cis-trans (compensatory)","V",0
 "female","C. briggsae dominant","cis-trans (compensatory)","X",0
+"female","C. briggsae dominant","conserved","I",0
+"female","C. briggsae dominant","conserved","II",0
+"female","C. briggsae dominant","conserved","III",0
+"female","C. briggsae dominant","conserved","IV",0
+"female","C. briggsae dominant","conserved","V",0
+"female","C. briggsae dominant","conserved","X",0
 "female","C. briggsae dominant","trans-only","I",87
 "female","C. briggsae dominant","trans-only","II",95
 "female","C. briggsae dominant","trans-only","III",80
 "female","C. briggsae dominant","trans-only","IV",100
 "female","C. briggsae dominant","trans-only","V",140
-"female","C. briggsae dominant","trans-only","X",167
+"female","C. briggsae dominant","trans-only","X",166
+"female","C. nigoni dominant","ambiguous","I",9
+"female","C. nigoni dominant","ambiguous","II",14
+"female","C. nigoni dominant","ambiguous","III",12
+"female","C. nigoni dominant","ambiguous","IV",23
+"female","C. nigoni dominant","ambiguous","V",32
+"female","C. nigoni dominant","ambiguous","X",26
 "female","C. nigoni dominant","cis + trans (enhancing)","I",25
 "female","C. nigoni dominant","cis + trans (enhancing)","II",24
 "female","C. nigoni dominant","cis + trans (enhancing)","III",19
@@ -371,9 +437,9 @@
 "female","C. nigoni dominant","cis x trans (compensatory)","IV",21
 "female","C. nigoni dominant","cis x trans (compensatory)","V",26
 "female","C. nigoni dominant","cis x trans (compensatory)","X",30
-"female","C. nigoni dominant","cis-only","I",32
+"female","C. nigoni dominant","cis-only","I",31
 "female","C. nigoni dominant","cis-only","II",38
-"female","C. nigoni dominant","cis-only","III",40
+"female","C. nigoni dominant","cis-only","III",39
 "female","C. nigoni dominant","cis-only","IV",44
 "female","C. nigoni dominant","cis-only","V",57
 "female","C. nigoni dominant","cis-only","X",44
@@ -383,57 +449,123 @@
 "female","C. nigoni dominant","cis-trans (compensatory)","IV",0
 "female","C. nigoni dominant","cis-trans (compensatory)","V",0
 "female","C. nigoni dominant","cis-trans (compensatory)","X",0
+"female","C. nigoni dominant","conserved","I",0
+"female","C. nigoni dominant","conserved","II",0
+"female","C. nigoni dominant","conserved","III",0
+"female","C. nigoni dominant","conserved","IV",0
+"female","C. nigoni dominant","conserved","V",0
+"female","C. nigoni dominant","conserved","X",0
 "female","C. nigoni dominant","trans-only","I",49
 "female","C. nigoni dominant","trans-only","II",52
 "female","C. nigoni dominant","trans-only","III",41
 "female","C. nigoni dominant","trans-only","IV",52
 "female","C. nigoni dominant","trans-only","V",84
 "female","C. nigoni dominant","trans-only","X",52
+"female","no change","ambiguous","I",13
+"female","no change","ambiguous","II",12
+"female","no change","ambiguous","III",19
+"female","no change","ambiguous","IV",23
+"female","no change","ambiguous","V",18
+"female","no change","ambiguous","X",23
+"female","no change","cis + trans (enhancing)","I",0
+"female","no change","cis + trans (enhancing)","II",0
+"female","no change","cis + trans (enhancing)","III",0
+"female","no change","cis + trans (enhancing)","IV",0
+"female","no change","cis + trans (enhancing)","V",0
+"female","no change","cis + trans (enhancing)","X",0
+"female","no change","cis x trans (compensatory)","I",0
+"female","no change","cis x trans (compensatory)","II",0
+"female","no change","cis x trans (compensatory)","III",0
+"female","no change","cis x trans (compensatory)","IV",0
+"female","no change","cis x trans (compensatory)","V",0
+"female","no change","cis x trans (compensatory)","X",0
+"female","no change","cis-only","I",0
+"female","no change","cis-only","II",0
+"female","no change","cis-only","III",0
+"female","no change","cis-only","IV",0
+"female","no change","cis-only","V",0
+"female","no change","cis-only","X",0
+"female","no change","cis-trans (compensatory)","I",30
+"female","no change","cis-trans (compensatory)","II",35
+"female","no change","cis-trans (compensatory)","III",24
+"female","no change","cis-trans (compensatory)","IV",31
+"female","no change","cis-trans (compensatory)","V",40
+"female","no change","cis-trans (compensatory)","X",34
+"female","no change","conserved","I",67
+"female","no change","conserved","II",100
+"female","no change","conserved","III",62
+"female","no change","conserved","IV",84
+"female","no change","conserved","V",165
+"female","no change","conserved","X",163
+"female","no change","trans-only","I",0
+"female","no change","trans-only","II",0
+"female","no change","trans-only","III",0
+"female","no change","trans-only","IV",0
+"female","no change","trans-only","V",0
+"female","no change","trans-only","X",0
+"female","overdominant","ambiguous","I",143
+"female","overdominant","ambiguous","II",106
+"female","overdominant","ambiguous","III",117
+"female","overdominant","ambiguous","IV",90
+"female","overdominant","ambiguous","V",100
+"female","overdominant","ambiguous","X",24
 "female","overdominant","cis + trans (enhancing)","I",135
 "female","overdominant","cis + trans (enhancing)","II",119
 "female","overdominant","cis + trans (enhancing)","III",113
 "female","overdominant","cis + trans (enhancing)","IV",108
-"female","overdominant","cis + trans (enhancing)","V",103
+"female","overdominant","cis + trans (enhancing)","V",102
 "female","overdominant","cis + trans (enhancing)","X",12
-"female","overdominant","cis x trans (compensatory)","I",145
+"female","overdominant","cis x trans (compensatory)","I",147
 "female","overdominant","cis x trans (compensatory)","II",124
 "female","overdominant","cis x trans (compensatory)","III",125
 "female","overdominant","cis x trans (compensatory)","IV",156
 "female","overdominant","cis x trans (compensatory)","V",104
 "female","overdominant","cis x trans (compensatory)","X",24
-"female","overdominant","cis-only","I",149
+"female","overdominant","cis-only","I",150
 "female","overdominant","cis-only","II",113
 "female","overdominant","cis-only","III",114
 "female","overdominant","cis-only","IV",93
 "female","overdominant","cis-only","V",88
 "female","overdominant","cis-only","X",15
-"female","overdominant","cis-trans (compensatory)","I",207
+"female","overdominant","cis-trans (compensatory)","I",205
 "female","overdominant","cis-trans (compensatory)","II",154
 "female","overdominant","cis-trans (compensatory)","III",165
 "female","overdominant","cis-trans (compensatory)","IV",144
 "female","overdominant","cis-trans (compensatory)","V",156
 "female","overdominant","cis-trans (compensatory)","X",38
+"female","overdominant","conserved","I",85
+"female","overdominant","conserved","II",64
+"female","overdominant","conserved","III",81
+"female","overdominant","conserved","IV",77
+"female","overdominant","conserved","V",101
+"female","overdominant","conserved","X",18
 "female","overdominant","trans-only","I",89
 "female","overdominant","trans-only","II",88
-"female","overdominant","trans-only","III",96
+"female","overdominant","trans-only","III",95
 "female","overdominant","trans-only","IV",65
 "female","overdominant","trans-only","V",64
 "female","overdominant","trans-only","X",10
+"female","underdominant","ambiguous","I",35
+"female","underdominant","ambiguous","II",57
+"female","underdominant","ambiguous","III",40
+"female","underdominant","ambiguous","IV",68
+"female","underdominant","ambiguous","V",90
+"female","underdominant","ambiguous","X",143
 "female","underdominant","cis + trans (enhancing)","I",11
 "female","underdominant","cis + trans (enhancing)","II",30
 "female","underdominant","cis + trans (enhancing)","III",21
-"female","underdominant","cis + trans (enhancing)","IV",35
+"female","underdominant","cis + trans (enhancing)","IV",34
 "female","underdominant","cis + trans (enhancing)","V",30
 "female","underdominant","cis + trans (enhancing)","X",56
 "female","underdominant","cis x trans (compensatory)","I",35
-"female","underdominant","cis x trans (compensatory)","II",58
+"female","underdominant","cis x trans (compensatory)","II",57
 "female","underdominant","cis x trans (compensatory)","III",32
 "female","underdominant","cis x trans (compensatory)","IV",40
 "female","underdominant","cis x trans (compensatory)","V",63
 "female","underdominant","cis x trans (compensatory)","X",43
-"female","underdominant","cis-only","I",17
+"female","underdominant","cis-only","I",18
 "female","underdominant","cis-only","II",31
-"female","underdominant","cis-only","III",17
+"female","underdominant","cis-only","III",18
 "female","underdominant","cis-only","IV",32
 "female","underdominant","cis-only","V",50
 "female","underdominant","cis-only","X",83
@@ -443,12 +575,24 @@
 "female","underdominant","cis-trans (compensatory)","IV",49
 "female","underdominant","cis-trans (compensatory)","V",63
 "female","underdominant","cis-trans (compensatory)","X",75
+"female","underdominant","conserved","I",58
+"female","underdominant","conserved","II",78
+"female","underdominant","conserved","III",68
+"female","underdominant","conserved","IV",106
+"female","underdominant","conserved","V",165
+"female","underdominant","conserved","X",225
 "female","underdominant","trans-only","I",52
-"female","underdominant","trans-only","II",87
+"female","underdominant","trans-only","II",88
 "female","underdominant","trans-only","III",53
-"female","underdominant","trans-only","IV",77
+"female","underdominant","trans-only","IV",78
 "female","underdominant","trans-only","V",141
-"female","underdominant","trans-only","X",193
+"female","underdominant","trans-only","X",194
+"male","additive","ambiguous","I",0
+"male","additive","ambiguous","II",2
+"male","additive","ambiguous","III",5
+"male","additive","ambiguous","IV",2
+"male","additive","ambiguous","V",2
+"male","additive","ambiguous","X",0
 "male","additive","cis + trans (enhancing)","I",43
 "male","additive","cis + trans (enhancing)","II",45
 "male","additive","cis + trans (enhancing)","III",34
@@ -473,19 +617,73 @@
 "male","additive","cis-trans (compensatory)","IV",0
 "male","additive","cis-trans (compensatory)","V",0
 "male","additive","cis-trans (compensatory)","X",0
+"male","additive","conserved","I",0
+"male","additive","conserved","II",0
+"male","additive","conserved","III",0
+"male","additive","conserved","IV",0
+"male","additive","conserved","V",0
+"male","additive","conserved","X",0
 "male","additive","trans-only","I",26
 "male","additive","trans-only","II",22
 "male","additive","trans-only","III",28
 "male","additive","trans-only","IV",29
 "male","additive","trans-only","V",43
 "male","additive","trans-only","X",0
+"male","ambiguous","ambiguous","I",97
+"male","ambiguous","ambiguous","II",99
+"male","ambiguous","ambiguous","III",105
+"male","ambiguous","ambiguous","IV",106
+"male","ambiguous","ambiguous","V",123
+"male","ambiguous","ambiguous","X",0
+"male","ambiguous","cis + trans (enhancing)","I",5
+"male","ambiguous","cis + trans (enhancing)","II",4
+"male","ambiguous","cis + trans (enhancing)","III",5
+"male","ambiguous","cis + trans (enhancing)","IV",1
+"male","ambiguous","cis + trans (enhancing)","V",3
+"male","ambiguous","cis + trans (enhancing)","X",0
+"male","ambiguous","cis x trans (compensatory)","I",8
+"male","ambiguous","cis x trans (compensatory)","II",7
+"male","ambiguous","cis x trans (compensatory)","III",3
+"male","ambiguous","cis x trans (compensatory)","IV",6
+"male","ambiguous","cis x trans (compensatory)","V",5
+"male","ambiguous","cis x trans (compensatory)","X",0
+"male","ambiguous","cis-only","I",17
+"male","ambiguous","cis-only","II",24
+"male","ambiguous","cis-only","III",12
+"male","ambiguous","cis-only","IV",17
+"male","ambiguous","cis-only","V",30
+"male","ambiguous","cis-only","X",0
+"male","ambiguous","cis-trans (compensatory)","I",59
+"male","ambiguous","cis-trans (compensatory)","II",62
+"male","ambiguous","cis-trans (compensatory)","III",49
+"male","ambiguous","cis-trans (compensatory)","IV",45
+"male","ambiguous","cis-trans (compensatory)","V",49
+"male","ambiguous","cis-trans (compensatory)","X",0
+"male","ambiguous","conserved","I",125
+"male","ambiguous","conserved","II",110
+"male","ambiguous","conserved","III",122
+"male","ambiguous","conserved","IV",111
+"male","ambiguous","conserved","V",129
+"male","ambiguous","conserved","X",0
+"male","ambiguous","trans-only","I",8
+"male","ambiguous","trans-only","II",7
+"male","ambiguous","trans-only","III",8
+"male","ambiguous","trans-only","IV",9
+"male","ambiguous","trans-only","V",15
+"male","ambiguous","trans-only","X",0
+"male","C. briggsae dominant","ambiguous","I",66
+"male","C. briggsae dominant","ambiguous","II",70
+"male","C. briggsae dominant","ambiguous","III",52
+"male","C. briggsae dominant","ambiguous","IV",77
+"male","C. briggsae dominant","ambiguous","V",95
+"male","C. briggsae dominant","ambiguous","X",0
 "male","C. briggsae dominant","cis + trans (enhancing)","I",35
 "male","C. briggsae dominant","cis + trans (enhancing)","II",35
 "male","C. briggsae dominant","cis + trans (enhancing)","III",24
 "male","C. briggsae dominant","cis + trans (enhancing)","IV",30
 "male","C. briggsae dominant","cis + trans (enhancing)","V",45
 "male","C. briggsae dominant","cis + trans (enhancing)","X",0
-"male","C. briggsae dominant","cis x trans (compensatory)","I",46
+"male","C. briggsae dominant","cis x trans (compensatory)","I",47
 "male","C. briggsae dominant","cis x trans (compensatory)","II",53
 "male","C. briggsae dominant","cis x trans (compensatory)","III",41
 "male","C. briggsae dominant","cis x trans (compensatory)","IV",44
@@ -503,12 +701,24 @@
 "male","C. briggsae dominant","cis-trans (compensatory)","IV",0
 "male","C. briggsae dominant","cis-trans (compensatory)","V",0
 "male","C. briggsae dominant","cis-trans (compensatory)","X",0
+"male","C. briggsae dominant","conserved","I",0
+"male","C. briggsae dominant","conserved","II",0
+"male","C. briggsae dominant","conserved","III",0
+"male","C. briggsae dominant","conserved","IV",0
+"male","C. briggsae dominant","conserved","V",0
+"male","C. briggsae dominant","conserved","X",0
 "male","C. briggsae dominant","trans-only","I",74
 "male","C. briggsae dominant","trans-only","II",88
 "male","C. briggsae dominant","trans-only","III",69
 "male","C. briggsae dominant","trans-only","IV",89
 "male","C. briggsae dominant","trans-only","V",130
 "male","C. briggsae dominant","trans-only","X",0
+"male","C. nigoni dominant","ambiguous","I",41
+"male","C. nigoni dominant","ambiguous","II",57
+"male","C. nigoni dominant","ambiguous","III",52
+"male","C. nigoni dominant","ambiguous","IV",61
+"male","C. nigoni dominant","ambiguous","V",59
+"male","C. nigoni dominant","ambiguous","X",0
 "male","C. nigoni dominant","cis + trans (enhancing)","I",30
 "male","C. nigoni dominant","cis + trans (enhancing)","II",20
 "male","C. nigoni dominant","cis + trans (enhancing)","III",17
@@ -533,17 +743,71 @@
 "male","C. nigoni dominant","cis-trans (compensatory)","IV",0
 "male","C. nigoni dominant","cis-trans (compensatory)","V",0
 "male","C. nigoni dominant","cis-trans (compensatory)","X",0
+"male","C. nigoni dominant","conserved","I",0
+"male","C. nigoni dominant","conserved","II",0
+"male","C. nigoni dominant","conserved","III",0
+"male","C. nigoni dominant","conserved","IV",0
+"male","C. nigoni dominant","conserved","V",0
+"male","C. nigoni dominant","conserved","X",0
 "male","C. nigoni dominant","trans-only","I",53
 "male","C. nigoni dominant","trans-only","II",44
 "male","C. nigoni dominant","trans-only","III",38
 "male","C. nigoni dominant","trans-only","IV",44
 "male","C. nigoni dominant","trans-only","V",73
 "male","C. nigoni dominant","trans-only","X",0
+"male","no change","ambiguous","I",118
+"male","no change","ambiguous","II",115
+"male","no change","ambiguous","III",109
+"male","no change","ambiguous","IV",100
+"male","no change","ambiguous","V",107
+"male","no change","ambiguous","X",0
+"male","no change","cis + trans (enhancing)","I",0
+"male","no change","cis + trans (enhancing)","II",0
+"male","no change","cis + trans (enhancing)","III",0
+"male","no change","cis + trans (enhancing)","IV",0
+"male","no change","cis + trans (enhancing)","V",0
+"male","no change","cis + trans (enhancing)","X",0
+"male","no change","cis x trans (compensatory)","I",0
+"male","no change","cis x trans (compensatory)","II",0
+"male","no change","cis x trans (compensatory)","III",0
+"male","no change","cis x trans (compensatory)","IV",0
+"male","no change","cis x trans (compensatory)","V",0
+"male","no change","cis x trans (compensatory)","X",0
+"male","no change","cis-only","I",0
+"male","no change","cis-only","II",0
+"male","no change","cis-only","III",0
+"male","no change","cis-only","IV",0
+"male","no change","cis-only","V",0
+"male","no change","cis-only","X",0
+"male","no change","cis-trans (compensatory)","I",93
+"male","no change","cis-trans (compensatory)","II",82
+"male","no change","cis-trans (compensatory)","III",73
+"male","no change","cis-trans (compensatory)","IV",49
+"male","no change","cis-trans (compensatory)","V",79
+"male","no change","cis-trans (compensatory)","X",0
+"male","no change","conserved","I",252
+"male","no change","conserved","II",235
+"male","no change","conserved","III",246
+"male","no change","conserved","IV",258
+"male","no change","conserved","V",319
+"male","no change","conserved","X",0
+"male","no change","trans-only","I",0
+"male","no change","trans-only","II",0
+"male","no change","trans-only","III",0
+"male","no change","trans-only","IV",0
+"male","no change","trans-only","V",0
+"male","no change","trans-only","X",0
+"male","overdominant","ambiguous","I",38
+"male","overdominant","ambiguous","II",48
+"male","overdominant","ambiguous","III",35
+"male","overdominant","ambiguous","IV",49
+"male","overdominant","ambiguous","V",103
+"male","overdominant","ambiguous","X",0
 "male","overdominant","cis + trans (enhancing)","I",8
 "male","overdominant","cis + trans (enhancing)","II",28
 "male","overdominant","cis + trans (enhancing)","III",7
 "male","overdominant","cis + trans (enhancing)","IV",19
-"male","overdominant","cis + trans (enhancing)","V",46
+"male","overdominant","cis + trans (enhancing)","V",47
 "male","overdominant","cis + trans (enhancing)","X",0
 "male","overdominant","cis x trans (compensatory)","I",8
 "male","overdominant","cis x trans (compensatory)","II",24
@@ -563,12 +827,24 @@
 "male","overdominant","cis-trans (compensatory)","IV",53
 "male","overdominant","cis-trans (compensatory)","V",84
 "male","overdominant","cis-trans (compensatory)","X",0
+"male","overdominant","conserved","I",36
+"male","overdominant","conserved","II",43
+"male","overdominant","conserved","III",39
+"male","overdominant","conserved","IV",51
+"male","overdominant","conserved","V",80
+"male","overdominant","conserved","X",0
 "male","overdominant","trans-only","I",16
 "male","overdominant","trans-only","II",22
 "male","overdominant","trans-only","III",15
 "male","overdominant","trans-only","IV",17
 "male","overdominant","trans-only","V",39
 "male","overdominant","trans-only","X",0
+"male","underdominant","ambiguous","I",31
+"male","underdominant","ambiguous","II",60
+"male","underdominant","ambiguous","III",45
+"male","underdominant","ambiguous","IV",52
+"male","underdominant","ambiguous","V",71
+"male","underdominant","ambiguous","X",0
 "male","underdominant","cis + trans (enhancing)","I",6
 "male","underdominant","cis + trans (enhancing)","II",9
 "male","underdominant","cis + trans (enhancing)","III",3
@@ -593,6 +869,12 @@
 "male","underdominant","cis-trans (compensatory)","IV",28
 "male","underdominant","cis-trans (compensatory)","V",32
 "male","underdominant","cis-trans (compensatory)","X",0
+"male","underdominant","conserved","I",63
+"male","underdominant","conserved","II",65
+"male","underdominant","conserved","III",66
+"male","underdominant","conserved","IV",84
+"male","underdominant","conserved","V",85
+"male","underdominant","conserved","X",0
 "male","underdominant","trans-only","I",23
 "male","underdominant","trans-only","II",49
 "male","underdominant","trans-only","III",30
