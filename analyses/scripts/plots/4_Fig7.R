@@ -15,10 +15,10 @@ library(gridExtra)
 library(RColorBrewer)
 library(viridis)
 theme_set(theme_cowplot())
-source("enrichment_fun.R")
+source("scripts/data/enrichment_fun.R")
 
 
-cis_trans.molevol.data = read.csv("tables/df.cis_divergence.molevol.csv")
+cis_trans.molevol.data = read.csv("tables/molecular_evolution/df.cis_divergence.molevol.csv")
 cis_trans.molevol.data$domain2 = as.character(cis_trans.molevol.data$domain)
 cis_trans.molevol.data$domain2[ grepl("arm",cis_trans.molevol.data$domain2) ] = "arms"
 cis_trans.molevol.data$domain2[ grepl("tip",cis_trans.molevol.data$domain2) ] = "tips"
@@ -26,9 +26,9 @@ type.levels = c("conserved","ambiguous","trans-only","cis-only","cis + trans (en
 
 arms_centers.counts.male = as.data.frame(cis_trans.molevol.data %>% filter(sex == "male" & domain2 != "tips") %>% group_by(domain2, type) %>% count() )
 arms_centers.counts.female = as.data.frame(cis_trans.molevol.data %>% filter(sex == "female" & domain2 != "tips") %>% group_by(domain2, type) %>% count() )
-arms_centers.type.enrich = data.frame(sex=rep(c("female","male"), each=14),
-                                      type=rep(levels(arms_centers.counts.male$type),2),
-                                      domain=rep(levels(arms_centers.counts.male$domain2),2),
+arms_centers.type.enrich = data.frame(sex=rep(c("female","male"), each=7),
+                                      type=rep(arms_centers.counts.male$type,2),
+                                      domain=rep(arms_centers.counts.male$domain2,2),
                                       enrichment=c(enrichment(matrix(arms_centers.counts.female$n, nrow=2, ncol=7), odds.ratio=T)[1,],
                                                   enrichment(matrix(arms_centers.counts.male$n, nrow=2, ncol=7), odds.ratio=T)[1,]),
                                       p.value=c(enrichment(matrix(arms_centers.counts.female$n, nrow=2, ncol=7), odds.ratio=F)[1,],
@@ -178,12 +178,21 @@ pD2 = ggplot(cis_trans.molevol.data %>% filter(domain2 != "tips") %>% filter(!gr
   background_grid(major="x", size.major = 0.2, colour.major = "grey75") +
   xlim(0,4)
 
+# supplementary figures
+
 part1 = plot_grid(
           pB + theme(plot.margin = unit(c(t=0.2, r=0.64, b=0, l=0), "cm")),
           pC + theme(plot.margin = unit(c(t=-0.1, r=-0.2, b=0, l=0.29), "cm")),
           plot_grid(pD1 + theme(plot.margin = unit(c(t=0, r=0.4, b=0, l=0), "cm")),
                     pD2 + theme(plot.margin = unit(c(t=0, r=1, b=0, l=-0.6), "cm"))),
           rel_heights = c(0.3,0.6,0.4), ncol=1, labels=c("A","B","C"))
+part1
+ggsave("figures/Suppl_Fig_cis_molevol_corr.png")
+ggsave("figures/Suppl_Fig_cis_molevol_corr.pdf", device="pdf", useDingbats=F)
+
+plot_grid(pA, pA2, ncol=1, align="v")
+ggsave("figures/Suppl_Fig_ka_ks_by_pos.png")
+ggsave("figures/Suppl_Fig_ka_ks_by_pos.pdf", device="pdf", useDingbats=F)
 
 # correlation
 p1 = ggplot(filter(cis_trans.molevol.data, sex == "female"), aes(y=dn/ds_ENCc, x=abs(logFC.ase))) +
@@ -200,7 +209,7 @@ p2 = ggplot(filter(cis_trans.molevol.data, sex == "female"), aes(y=dn, x=abs(log
     geom_pointdensity(show.legend=F) +
     geom_smooth(method="lm", color="black") +
     ylab(expression(paste(italic("K")[a]))) +
-    xlab(expression(paste("log"[2], " ",italic("cis")))) +
+    xlab(expression(paste(italic("cis")," regulatory divergence (log"[2], " ASE)"))) +
     background_grid(major="xy", size.major = 0.2, colour.major = "grey75") +
     scale_color_viridis(option="viridis") +
     facet_rep_wrap(~sex, ncol=1, strip.position="right") +
@@ -210,12 +219,11 @@ p3 = ggplot(filter(cis_trans.molevol.data, sex == "female"), aes(y=1-prop_cons_5
     geom_pointdensity(show.legend=F) +
     geom_smooth(method="lm", color="black") +
     ylab(expression(paste("1-",italic("p")[cons]))) +
-    xlab(expression(paste("log"[2], " ",italic("cis")))) +
+    xlab(expression(paste(italic("cis")," regulatory divergence (log"[2], " ASE)"))) +
     background_grid(major="xy", size.major = 0.2, colour.major = "grey75") +
     facet_rep_wrap(~sex, ncol=1, strip.position="right") +
     theme(strip.background = element_blank(), strip.text = element_blank()) +
-    theme(axis.title.x=element_text(hjust=-0.35)) +
-    #theme(strip.background = element_rect(fill="grey90", color=NA)) +
+    theme(axis.title.x=element_text(hjust=-4)) +
     scale_color_viridis(option="viridis")
 part2 = plot_grid(p1, p3, nrow=1, labels = c("A","B"), rel_widths=c(0.45,0.5))
 part2
