@@ -19,7 +19,7 @@ library(scales)
 library(venneuler)
 theme_set(theme_cowplot())
 
-source("scripts/enrichment_fun.R")
+source("scripts/data/enrichment_fun.R")
 
 # colors
 
